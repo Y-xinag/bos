@@ -1,6 +1,5 @@
 package com.xr.controller;
 
-import com.xr.service.UserService;
 import com.xr.util.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

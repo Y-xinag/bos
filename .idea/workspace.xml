@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/bos.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/element_ui.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/config/FastjsonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/config/FastjsonConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/UserServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +118,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\job\bos\base\src\main\resources\mybatis\mapper" />
       <recent name="E:\IDEA file\bos\base\src\main\resources\mabatis" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -187,12 +178,24 @@
       <workItem from="1591770944476" duration="444000" />
       <workItem from="1591771506844" duration="14000" />
       <workItem from="1591790260843" duration="681000" />
-      <workItem from="1591842854625" duration="3060000" />
+      <workItem from="1591842854625" duration="3422000" />
     </task>
+    <task id="LOCAL-00001" summary="第三，四节课">
+      <created>1591846767603</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591846767603</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="第三，四节课" />
+    <option name="LAST_COMMIT_MESSAGE" value="第三，四节课" />
   </component>
   <component name="WindowStateProjectService">
     <state x="504" y="51" key="#BaseApplication" timestamp="1591770974882">
@@ -207,22 +210,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591763413668" />
-    <state width="1205" height="291" key="GridCell.Tab.0.bottom" timestamp="1591788565127">
+    <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591846788669">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
-    <state width="1205" height="291" key="GridCell.Tab.0.center" timestamp="1591788565127">
+    <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591846788669" />
+    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1591846764122">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
-    <state width="1205" height="291" key="GridCell.Tab.0.left" timestamp="1591788565127">
+    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1591846764122" />
+    <state width="1205" height="291" key="GridCell.Tab.0.bottom" timestamp="1591846644184">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
-    <state width="1205" height="291" key="GridCell.Tab.0.right" timestamp="1591788565127">
+    <state width="1205" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
+    <state width="1205" height="291" key="GridCell.Tab.0.center" timestamp="1591846644184">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
+    <state width="1205" height="291" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
+    <state width="1205" height="291" key="GridCell.Tab.0.left" timestamp="1591846644184">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1205" height="291" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
+    <state width="1205" height="291" key="GridCell.Tab.0.right" timestamp="1591846644184">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1205" height="291" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
     <state width="1205" height="291" key="GridCell.Tab.1.bottom" timestamp="1591788565127">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
