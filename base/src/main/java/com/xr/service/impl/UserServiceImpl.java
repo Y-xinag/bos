@@ -1,7 +1,5 @@
 package com.xr.service.impl;
 
-import com.xr.entity.User;
-import com.xr.mapper.UserMapper;
 import com.xr.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
