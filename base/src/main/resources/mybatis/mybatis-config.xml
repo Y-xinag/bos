@@ -11,8 +11,8 @@
         <package name="com.xr.entity" />
     </typeAliases>
     <!-- mybatis添加分页的拦截器
-    <plugins>
-    <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
-    </plugins>
     -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 </configuration>

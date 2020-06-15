@@ -1,10 +1,477 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/UserServiceImpl.java" beforeDir="false" />
+    <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="第二次">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/config/CrosConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/config/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysDeptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Creditrating.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/CreditratingExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Datacollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/DatacollectionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/DcpReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/DcpReportExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/EducationPolitics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/EducationPoliticsExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Letterreport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/LetterreportExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Postriskcombing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/PostriskcombingExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Processrick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/ProcessrickExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdEntityResponsibility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdEntityResponsibilityExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdHonestConversation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdHonestConversationExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkDeployment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkDeploymentExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkPlan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkPlanExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Riskdisposition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RiskdispositionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Riskevaluate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RiskevaluateExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Riskpointassessment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RiskpointassessmentExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Riskpointwarning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RiskpointwarningExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SpvBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SpvBackExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SpvDuty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SpvDutyExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Supervisionfiling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SupervisionfilingExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysDept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysDeptExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysLogExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysMechanism.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysMechanismExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysMenuExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermissionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostPermissionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysRoleDept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysRoleDeptExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysRoleExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysRoleMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysRoleMenuExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaffExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysUserExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysUserRoleExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Systemprocess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SystemprocessExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/CreditratingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/DatacollectionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/DcpReportMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/EducationPoliticsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/LetterreportMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/PostriskcombingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/ProcessrickMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdEntityResponsibilityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdHonestConversationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdWorkDeploymentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdWorkPlanMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RiskdispositionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RiskevaluateMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RiskpointassessmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RiskpointwarningMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SpvBackMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SpvDutyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SupervisionfilingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysDeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostPermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysRoleDeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysRoleMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysUserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SystemprocessMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysDeptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysDeptServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/SysDeptGroupUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/CreditratingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/DatacollectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/DcpReportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/EducationPoliticsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/LetterreportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/PostriskcombingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/ProcessrickMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdEntityResponsibilityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdHonestConversationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdWorkDeploymentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdWorkPlanMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RiskdispositionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RiskevaluateMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RiskpointassessmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RiskpointwarningMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SpvBackMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SpvDutyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SupervisionfilingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysDeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysMechanismMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysPermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysPostMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysPostPermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysRoleDeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysRoleMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysStaffMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysUserRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SystemprocessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.env.staging" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.github/ISSUE_TEMPLATE/feature_request.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.github/ISSUE_TEMPLATE/question.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/README.es.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/README.ja.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/README.zh-CN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/build/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/mock-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/remote-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/role/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/role/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/mock/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/component/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/component/prompt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/store/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/store/prompt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/view/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plop-templates/view/prompt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/plopfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/qiniu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/remote-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/role.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/dept.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/assets/401_images/401.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/assets/404_images/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/assets/404_images/404_cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/assets/custom-theme/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/assets/custom-theme/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/assets/custom-theme/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/BackToTop/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Breadcrumb/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Charts/Keyboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Charts/LineMarker.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Charts/MixChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Charts/mixins/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/DndList/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/DragSelect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Dropzone/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ErrorLog/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/GithubCorner/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Hamburger/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/HeaderSearch/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ImageCropper/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ImageCropper/utils/data2blob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ImageCropper/utils/effectRipple.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ImageCropper/utils/language.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ImageCropper/utils/mimes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/JsonEditor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Kanban/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/LangSelect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/MDinput/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/MarkdownEditor/default-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/MarkdownEditor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Pagination/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/PanThumb/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/RightPanel/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Screenfull/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Share/DropdownMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/SizeSelect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Sticky/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/SvgIcon/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/TextHoverEffect/Mallki.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/ThemePicker/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Tinymce/components/EditorImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Tinymce/dynamicLoadScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Tinymce/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Tinymce/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Tinymce/toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Upload/SingleImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Upload/SingleImage2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/Upload/SingleImage3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/components/UploadExcel/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/clipboard/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/clipboard/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/el-drag-dialog/drag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/el-drag-dialog/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/el-table/adaptive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/el-table/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/permission/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/permission/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/waves/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/waves/waves.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/directive/waves/waves.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/filters/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/bug.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/clipboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/component.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/dashboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/documentation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/drag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/education.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/example.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/excel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/exit-fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/eye-open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/form.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/guide.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/international.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/language.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/lock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/message.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/money.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/nested.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/password.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/pdf.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/people.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/peoples.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/qq.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/shopping.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/size.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/skill.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/theme.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/tree-table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/tree.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/wechat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svg/zip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/icons/svgo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/lang/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/lang/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/lang/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/lang/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/lang/zh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/AppMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Navbar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Settings/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Sidebar/FixiOSBug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Sidebar/Item.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Sidebar/Link.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Sidebar/Logo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Sidebar/SidebarItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/Sidebar/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/TagsView/ScrollPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/TagsView/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/layout/mixin/ResizeHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/router/modules/charts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/router/modules/components.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/router/modules/nested.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/router/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/getters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/modules/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/modules/errorLog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/modules/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/modules/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/modules/tagsView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/store/modules/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/btn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/element-ui.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/element-variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/styles/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/error-log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/get-page-title.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/i18n.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/open-window.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/scroll-to.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/utils/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/vendor/Export2Excel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/vendor/Export2Zip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/charts/keyboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/charts/line.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/charts/mix-chart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/clipboard/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/avatar-upload.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/back-to-top.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/count-to.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/dnd-list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/drag-dialog.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/drag-kanban.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/drag-select.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/dropzone.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/json-editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/markdown.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/mixin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/split-pane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/sticky.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/components-demo/tinymce.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/BarChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/BoxCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/LineChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/PanelGroup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/PieChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/RaddarChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/TodoList/Todo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/TodoList/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/TodoList/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/TransactionTable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/components/mixins/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/admin/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/editor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/dashboard/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/documentation/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/error-log/components/ErrorTestA.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/error-log/components/ErrorTestB.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/error-log/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/error-page/401.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/error-page/404.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/components/ArticleDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/components/Dropdown/Comment.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/components/Dropdown/Platform.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/components/Dropdown/SourceUrl.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/components/Dropdown/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/components/Warning.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/example/list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/components/AutoWidthOption.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/components/BookTypeOption.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/components/FilenameOption.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/export-excel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/merge-header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/select-excel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/excel/upload-excel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/guide/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/guide/steps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/i18n-demo/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/i18n-demo/local.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/icons/element-icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/icons/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/icons/svg-icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/login/auth-redirect.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/login/components/SocialSignin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/login/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu1/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu1/menu1-1/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu1/menu1-2/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu1/menu1-2/menu1-2-1/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu1/menu1-2/menu1-2-2/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu1/menu1-3/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/nested/menu2/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/pdf/content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/pdf/download.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/pdf/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/permission/components/SwitchRoles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/permission/directive.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/permission/page.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/permission/role.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/profile/components/Account.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/profile/components/Activity.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/profile/components/Timeline.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/profile/components/UserCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/profile/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/qiniu/upload.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/redirect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/tab/components/TabPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/tab/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/table/complex-table.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/table/drag-table.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/table/dynamic-table/components/FixedThead.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/table/dynamic-table/components/UnfixedThead.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/table/dynamic-table/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/table/inline-edit-table.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/theme/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/zip/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/tests/unit/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/tests/unit/components/Hamburger.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/tests/unit/components/SvgIcon.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/tests/unit/utils/formatTime.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/tests/unit/utils/parseTime.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/tests/unit/utils/validate.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/config/FastjsonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/config/FastjsonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/util/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/CommonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/util/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/ResponseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/generatorConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,20 +480,6 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,13 +490,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>rules</find>
-      <find>createLin</find>
-      <find>usesEslint</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,6 +537,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -102,7 +550,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591763362959" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bos-ui/node_modules/element-ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/base/src/main/java/com/xr/entity" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -111,21 +559,56 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="ts.external.directory.path" value="D:\IDE\IntelliJ IDEA 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\job\bos\base\src\main\java\com\xr\entity" />
+      <recent name="D:\job\bos\base\src\main\java\com\xr\mapper" />
+      <recent name="D:\job\bos\base\src\main\resources\mybatis\mapper" />
+      <recent name="D:\job\bos\bos-view\src\views\sys" />
+      <recent name="D:\job\bos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\job\bos\base\src\main\resources\mybatis\mapper" />
       <recent name="E:\IDEA file\bos\base\src\main\resources\mabatis" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\job\bos" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.BaseApplicationTests.contextLoads">
+  <component name="RunManager" selected="Spring Boot.BaseApplication">
+    <configuration name="CommonUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xr.util.CommonUtil" />
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xr.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseApplicationTests.aa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xr" />
+      <option name="MAIN_CLASS_NAME" value="com.xr.BaseApplicationTests" />
+      <option name="METHOD_NAME" value="aa" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BaseApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="base" />
       <extension name="coverage">
@@ -142,6 +625,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BaseApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xr" />
+      <option name="MAIN_CLASS_NAME" value="com.xr.BaseApplicationTests" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="base" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xr.BaseApplication" />
@@ -151,7 +650,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BaseApplicationTests.test" />
+        <item itemvalue="Application.CommonUtil" />
         <item itemvalue="JUnit.BaseApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.BaseApplicationTests.aa" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +680,12 @@
       <workItem from="1591770944476" duration="444000" />
       <workItem from="1591771506844" duration="14000" />
       <workItem from="1591790260843" duration="681000" />
-      <workItem from="1591842854625" duration="3422000" />
+      <workItem from="1591842854625" duration="23137000" />
+      <workItem from="1591878829863" duration="106000" />
+      <workItem from="1591879569713" duration="8743000" />
+      <workItem from="1591925110230" duration="40232000" />
+      <workItem from="1592029340460" duration="14623000" />
+      <workItem from="1592183227137" duration="12043000" />
     </task>
     <task id="LOCAL-00001" summary="第三，四节课">
       <created>1591846767603</created>
@@ -187,15 +694,24 @@
       <option name="project" value="LOCAL" />
       <updated>1591846767603</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="第三，四节课">
+      <created>1591846953495</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591846953495</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="第三，四节课" />
-    <option name="LAST_COMMIT_MESSAGE" value="第三，四节课" />
+    <MESSAGE value="第二次" />
+    <option name="LAST_COMMIT_MESSAGE" value="第二次" />
   </component>
   <component name="WindowStateProjectService">
     <state x="504" y="51" key="#BaseApplication" timestamp="1591770974882">
@@ -206,50 +722,78 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="763" y="96" key="#Plugins/0.0.1920.1050@0.0.1920.1050" timestamp="1591770840198" />
+    <state x="987" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592188976230">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="987" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592188976230" />
+    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser" timestamp="1592040943934">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1592040943934" />
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591763413668">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591763413668" />
-    <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591846788669">
+    <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592205268232">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591846788669" />
-    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1591846764122">
+    <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592205268232" />
+    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1592207116735">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1591846764122" />
-    <state width="1205" height="291" key="GridCell.Tab.0.bottom" timestamp="1591846644184">
+    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1592207116735" />
+    <state width="1867" height="235" key="GridCell.Tab.0.bottom" timestamp="1592207079617">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
-    <state width="1205" height="291" key="GridCell.Tab.0.center" timestamp="1591846644184">
+    <state width="1867" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079617" />
+    <state width="1867" height="235" key="GridCell.Tab.0.center" timestamp="1592207079617">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
-    <state width="1205" height="291" key="GridCell.Tab.0.left" timestamp="1591846644184">
+    <state width="1867" height="235" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079617" />
+    <state width="1867" height="235" key="GridCell.Tab.0.left" timestamp="1592207079617">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
-    <state width="1205" height="291" key="GridCell.Tab.0.right" timestamp="1591846644184">
+    <state width="1867" height="235" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079617" />
+    <state width="1867" height="235" key="GridCell.Tab.0.right" timestamp="1592207079617">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591846644184" />
-    <state width="1205" height="291" key="GridCell.Tab.1.bottom" timestamp="1591788565127">
+    <state width="1867" height="235" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079617" />
+    <state width="1867" height="235" key="GridCell.Tab.1.bottom" timestamp="1592207079618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
-    <state width="1205" height="291" key="GridCell.Tab.1.center" timestamp="1591788565127">
+    <state width="1867" height="235" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079618" />
+    <state width="1867" height="235" key="GridCell.Tab.1.center" timestamp="1592207079618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
-    <state width="1205" height="291" key="GridCell.Tab.1.left" timestamp="1591788565127">
+    <state width="1867" height="235" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079618" />
+    <state width="1867" height="235" key="GridCell.Tab.1.left" timestamp="1592207079618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
-    <state width="1205" height="291" key="GridCell.Tab.1.right" timestamp="1591788565127">
+    <state width="1867" height="235" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079617" />
+    <state width="1867" height="235" key="GridCell.Tab.1.right" timestamp="1592207079618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1205" height="291" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591788565127" />
+    <state width="1867" height="235" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592207079618" />
+    <state width="1867" height="378" key="GridCell.Tab.2.bottom" timestamp="1591888569785">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1867" height="378" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591888569785" />
+    <state width="1867" height="378" key="GridCell.Tab.2.center" timestamp="1591888569785">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1867" height="378" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591888569785" />
+    <state width="1867" height="378" key="GridCell.Tab.2.left" timestamp="1591888569785">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1867" height="378" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591888569785" />
+    <state width="1867" height="378" key="GridCell.Tab.2.right" timestamp="1591888569785">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1867" height="378" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591888569785" />
+    <state width="276" height="551" key="HiddenNamespacesPopup" timestamp="1592188571072">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="276" height="551" key="HiddenNamespacesPopup/0.0.1920.1050@0.0.1920.1050" timestamp="1592188571072" />
     <state x="689" y="123" key="Maven.ArtifactSearchDialog" timestamp="1591846303299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

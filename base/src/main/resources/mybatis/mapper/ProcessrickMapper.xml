@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xr.mapper.ProcessrickMapper">
+  <resultMap id="BaseResultMap" type="com.xr.entity.Processrick">
+    <id column="proid" jdbcType="INTEGER" property="proid" />
+    <result column="processID" jdbcType="INTEGER" property="processid" />
+    <result column="proName" jdbcType="VARCHAR" property="proname" />
+    <result column="proYear" jdbcType="TIMESTAMP" property="proyear" />
+    <result column="proInfomation" jdbcType="VARCHAR" property="proinfomation" />
+    <result column="proAccessory" jdbcType="VARCHAR" property="proaccessory" />
+    <result column="proCreateTime" jdbcType="TIMESTAMP" property="procreatetime" />
+    <result column="proCreateId" jdbcType="INTEGER" property="procreateid" />
+    <result column="proCreateName" jdbcType="VARCHAR" property="procreatename" />
+    <result column="proStatus" jdbcType="INTEGER" property="prostatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    proid, processID, proName, proYear, proInfomation, proAccessory, proCreateTime, proCreateId, 
+    proCreateName, proStatus
+  </sql>
+  <select id="selectByExample" parameterType="com.xr.entity.ProcessrickExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from processrick
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from processrick
+    where proid = #{proid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from processrick
+    where proid = #{proid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xr.entity.ProcessrickExample">
+    delete from processrick
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xr.entity.Processrick">
+    insert into processrick (proid, processID, proName, 
+      proYear, proInfomation, proAccessory, 
+      proCreateTime, proCreateId, proCreateName, 
+      proStatus)
+    values (#{proid,jdbcType=INTEGER}, #{processid,jdbcType=INTEGER}, #{proname,jdbcType=VARCHAR}, 
+      #{proyear,jdbcType=TIMESTAMP}, #{proinfomation,jdbcType=VARCHAR}, #{proaccessory,jdbcType=VARCHAR}, 
+      #{procreatetime,jdbcType=TIMESTAMP}, #{procreateid,jdbcType=INTEGER}, #{procreatename,jdbcType=VARCHAR}, 
+      #{prostatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xr.entity.Processrick">
+    insert into processrick
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="proid != null">
+        proid,
+      </if>
+      <if test="processid != null">
+        processID,
+      </if>
+      <if test="proname != null">
+        proName,
+      </if>
+      <if test="proyear != null">
+        proYear,
+      </if>
+      <if test="proinfomation != null">
+        proInfomation,
+      </if>
+      <if test="proaccessory != null">
+        proAccessory,
+      </if>
+      <if test="procreatetime != null">
+        proCreateTime,
+      </if>
+      <if test="procreateid != null">
+        proCreateId,
+      </if>
+      <if test="procreatename != null">
+        proCreateName,
+      </if>
+      <if test="prostatus != null">
+        proStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="proid != null">
+        #{proid,jdbcType=INTEGER},
+      </if>
+      <if test="processid != null">
+        #{processid,jdbcType=INTEGER},
+      </if>
+      <if test="proname != null">
+        #{proname,jdbcType=VARCHAR},
+      </if>
+      <if test="proyear != null">
+        #{proyear,jdbcType=TIMESTAMP},
+      </if>
+      <if test="proinfomation != null">
+        #{proinfomation,jdbcType=VARCHAR},
+      </if>
+      <if test="proaccessory != null">
+        #{proaccessory,jdbcType=VARCHAR},
+      </if>
+      <if test="procreatetime != null">
+        #{procreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="procreateid != null">
+        #{procreateid,jdbcType=INTEGER},
+      </if>
+      <if test="procreatename != null">
+        #{procreatename,jdbcType=VARCHAR},
+      </if>
+      <if test="prostatus != null">
+        #{prostatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xr.entity.ProcessrickExample" resultType="java.lang.Long">
+    select count(*) from processrick
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update processrick
+    <set>
+      <if test="record.proid != null">
+        proid = #{record.proid,jdbcType=INTEGER},
+      </if>
+      <if test="record.processid != null">
+        processID = #{record.processid,jdbcType=INTEGER},
+      </if>
+      <if test="record.proname != null">
+        proName = #{record.proname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proyear != null">
+        proYear = #{record.proyear,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.proinfomation != null">
+        proInfomation = #{record.proinfomation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proaccessory != null">
+        proAccessory = #{record.proaccessory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.procreatetime != null">
+        proCreateTime = #{record.procreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.procreateid != null">
+        proCreateId = #{record.procreateid,jdbcType=INTEGER},
+      </if>
+      <if test="record.procreatename != null">
+        proCreateName = #{record.procreatename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prostatus != null">
+        proStatus = #{record.prostatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update processrick
+    set proid = #{record.proid,jdbcType=INTEGER},
+      processID = #{record.processid,jdbcType=INTEGER},
+      proName = #{record.proname,jdbcType=VARCHAR},
+      proYear = #{record.proyear,jdbcType=TIMESTAMP},
+      proInfomation = #{record.proinfomation,jdbcType=VARCHAR},
+      proAccessory = #{record.proaccessory,jdbcType=VARCHAR},
+      proCreateTime = #{record.procreatetime,jdbcType=TIMESTAMP},
+      proCreateId = #{record.procreateid,jdbcType=INTEGER},
+      proCreateName = #{record.procreatename,jdbcType=VARCHAR},
+      proStatus = #{record.prostatus,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xr.entity.Processrick">
+    update processrick
+    <set>
+      <if test="processid != null">
+        processID = #{processid,jdbcType=INTEGER},
+      </if>
+      <if test="proname != null">
+        proName = #{proname,jdbcType=VARCHAR},
+      </if>
+      <if test="proyear != null">
+        proYear = #{proyear,jdbcType=TIMESTAMP},
+      </if>
+      <if test="proinfomation != null">
+        proInfomation = #{proinfomation,jdbcType=VARCHAR},
+      </if>
+      <if test="proaccessory != null">
+        proAccessory = #{proaccessory,jdbcType=VARCHAR},
+      </if>
+      <if test="procreatetime != null">
+        proCreateTime = #{procreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="procreateid != null">
+        proCreateId = #{procreateid,jdbcType=INTEGER},
+      </if>
+      <if test="procreatename != null">
+        proCreateName = #{procreatename,jdbcType=VARCHAR},
+      </if>
+      <if test="prostatus != null">
+        proStatus = #{prostatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where proid = #{proid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xr.entity.Processrick">
+    update processrick
+    set processID = #{processid,jdbcType=INTEGER},
+      proName = #{proname,jdbcType=VARCHAR},
+      proYear = #{proyear,jdbcType=TIMESTAMP},
+      proInfomation = #{proinfomation,jdbcType=VARCHAR},
+      proAccessory = #{proaccessory,jdbcType=VARCHAR},
+      proCreateTime = #{procreatetime,jdbcType=TIMESTAMP},
+      proCreateId = #{procreateid,jdbcType=INTEGER},
+      proCreateName = #{procreatename,jdbcType=VARCHAR},
+      proStatus = #{prostatus,jdbcType=INTEGER}
+    where proid = #{proid,jdbcType=INTEGER}
+  </update>
+</mapper>
