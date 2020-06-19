@@ -31,7 +31,7 @@ public interface SysUserService {
      * @param limit
      * @return
      */
-    List<SysUser> list1(Integer page,Integer limit);
+    List<SysUser> list1(String name, Integer page,Integer limit);
 
     /**
      * 权限赋权

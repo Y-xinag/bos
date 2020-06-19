@@ -1,9 +1,17 @@
 package com.xr.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+@Data
 public class SysStaff implements Serializable {
+    private List<SysPost> posts;
+
     private Integer sid;
 
     private String name;
@@ -24,8 +32,12 @@ public class SysStaff implements Serializable {
 
     private String password;
 
+    private String salt;
+
     private String pid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd") // 前台传过来的日期格式转换
+    @JsonFormat(pattern = "yyyy-MM-dd") // 后台的JAVA类型，转为JSON字符串
     private Date createTime;
 
     private Integer createId;
@@ -112,6 +124,14 @@ public class SysStaff implements Serializable {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt == null ? null : salt.trim();
     }
 
     public String getPid() {

@@ -79,8 +79,8 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public List<SysUser> list1(Integer page, Integer limit) {
-        return sysUserMapper.list1(page,limit);
+    public List<SysUser> list1(String name, Integer page, Integer limit) {
+        return sysUserMapper.list1(name,page,limit);
     }
 
     @Override

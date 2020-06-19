@@ -12,6 +12,7 @@
     <result column="mid" jdbcType="INTEGER" property="mid" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
     <result column="pid" jdbcType="VARCHAR" property="pid" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="create_id" jdbcType="INTEGER" property="createId" />
@@ -76,8 +77,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    sid, name, sex, age, educational_background, political_appearance, phone, mid, username, 
-    password, pid, create_time, create_id, staus
+    sid, name, sex, age, educational_background, political_appearance, phone, mid, username,
+    password, salt, pid, create_time, create_id, staus
   </sql>
   <select id="selectByExample" parameterType="com.xr.entity.SysStaffExample" resultMap="BaseResultMap">
     select
@@ -94,7 +95,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from sys_staff
     where sid = #{sid,jdbcType=INTEGER}
@@ -110,15 +111,15 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.xr.entity.SysStaff">
-    insert into sys_staff (sid, name, sex, 
-      age, educational_background, political_appearance, 
-      phone, mid, username, 
-      password, pid, create_time, 
+    insert into sys_staff (sid, name, sex,
+      age, educational_background, political_appearance,
+      phone, mid, username,
+      password, pid, create_time,
       create_id, staus)
-    values (#{sid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
-      #{age,jdbcType=INTEGER}, #{educationalBackground,jdbcType=VARCHAR}, #{politicalAppearance,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{mid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{sid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR},
+      #{age,jdbcType=INTEGER}, #{educationalBackground,jdbcType=VARCHAR}, #{politicalAppearance,jdbcType=VARCHAR},
+      #{phone,jdbcType=VARCHAR}, #{mid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
+      #{password,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
       #{createId,jdbcType=INTEGER}, #{staus,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xr.entity.SysStaff">
@@ -153,6 +154,9 @@
       </if>
       <if test="password != null">
         password,
+      </if>
+      <if test="salt != null">
+        salt,
       </if>
       <if test="pid != null">
         pid,
@@ -197,6 +201,9 @@
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        #{salt,jdbcType=VARCHAR},
       </if>
       <if test="pid != null">
         #{pid,jdbcType=VARCHAR},
@@ -317,6 +324,9 @@
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        salt = #{salt,jdbcType=VARCHAR},
       </if>
       <if test="pid != null">
         pid = #{pid,jdbcType=VARCHAR},

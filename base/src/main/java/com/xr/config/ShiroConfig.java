@@ -53,8 +53,8 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/logout", "logout");
         // 配置不会被拦截的链接 顺序判断
         filterChainDefinitionMap.put("/static/**", "anon");
-        filterChainDefinitionMap.put("/user/login/**", "anon"); // 获得用户可以访问的路由
-        filterChainDefinitionMap.put("/user/info/**", "anon"); // 获得用户信息
+        filterChainDefinitionMap.put("/staff/login/**", "anon"); // 获得用户可以访问的路由
+        filterChainDefinitionMap.put("/staff/info/**", "anon"); // 获得用户信息
         // swagger的资源放行
         filterChainDefinitionMap.put("/swagger-ui.html", "anon");
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
@@ -64,7 +64,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/configuration/ui", "anon");
         filterChainDefinitionMap.put("/**", "authc");
         //配置shiro默认登录界面地址，前后端分离中登录界面跳转应由前端路由控制，后台仅返回json数据
-        shiroFilterFactoryBean.setLoginUrl("/user/login");
+        shiroFilterFactoryBean.setLoginUrl("/staff/login");
         shiroFilterFactoryBean.setUnauthorizedUrl("/404");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;

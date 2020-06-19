@@ -5,7 +5,7 @@
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="getList">
         查询
       </el-button>
-      <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">
+      <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate()">
         添加
       </el-button>
     </div>
@@ -21,7 +21,7 @@
     >
       <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80">
         <template slot-scope="scope">
-          <span>{{ scope.row.id }}</span>
+          <span>{{ scope.row.sid }}</span>
         </template>
       </el-table-column>
 
@@ -30,17 +30,41 @@
           <span class="link-type">{{ row.name }}</span>
         </template>
       </el-table-column>
-
-      <el-table-column label="创建时间" width="150px" align="center">
-        <template slot-scope="scope">
-          <span>{{ scope.row.createTime | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+      <el-table-column label="性别" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.sex }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="年龄" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.age }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="学历" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.educationalBackground }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="政治面貌" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.politicalAppearance }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="账号" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.username }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="手机号" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.phone }}</span>
         </template>
       </el-table-column>
 
 
-      <el-table-column label="邮箱" min-width="150px">
-        <template slot-scope="{row}">
-          <span class="link-type">{{ row.email }}</span>
+      <el-table-column label="创建时间" width="150px" align="center">
+        <template slot-scope="scope">
+          <span>{{ scope.row.createTime | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
 
@@ -69,45 +93,66 @@
       -->
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 80%; margin-left:50px;">
         <!--        数据校验要求prop值和temp.属性名一致-->
-        <el-form-item label="部门" prop="sex">
-          <el-select v-model="temp.deptId" placeholder="请选择">
+        <el-form-item label="用户名" prop="name">
+          <el-input placeholder="请输入用户名" v-model="temp.name" />
+        </el-form-item>
+        <el-form-item label="性别" prop="sex">
+          <el-radio-group v-model="temp.sex">
+            <el-radio label="男"></el-radio>
+            <el-radio label="女"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="年龄" prop="age">
+          <el-input placeholder="请输入年龄" v-model="temp.age" />
+        </el-form-item>
+        <el-form-item label="部门" prop="mid">
+          <!--<el-select v-model="temp.mid" placeholder="请选择">
             <el-option-group
-              v-for="group in deptList"
-              :key="group.id"
-              :label="group.name">
-              <el-option-group
-                v-for="items in group.items"
-                :key="items.id"
-                :label="items.name">
+              v-for="group in mechanismList"
+              :key="group.mid"
+              :label="group.mechanismName">
                 <el-option
-                  v-for="item in items.items"
-                  :key="item.id"
-                  :label="item.name"
-                  :value="item.id">
+                  v-for="item in group.mechanisms"
+                  :key="item.mid"
+                  :label="item.mechanismName"
+                  :value="item.mid">
                 </el-option>
               </el-option-group>
+          </el-select>-->
+          <el-select v-model="temp.mid" placeholder="请选择">
+            <el-option-group
+              v-for="group in mechanismList"
+              :key="group.mid"
+              :label="group.mechanismName">
+              <el-option
+                v-for="items in group.mechanisms"
+                :key="items.mid"
+                :label="items.mechanismName"
+                :value="items.mid">
+              </el-option>
             </el-option-group>
           </el-select>
+          <!--<el-cascader
+            v-model="temp.mid"
+            :options="mechanismList"
+            placeholder="请选择"
+            :props="{ value: 'mid', label: 'mechanismName'}"
+            @change="handleChange"></el-cascader>-->
         </el-form-item>
-        <el-form-item label="姓名" prop="name">
-          <el-input placeholder="请输入用户名" v-model="temp.name" />
+        <el-form-item label="学历" prop="educationalBackground">
+          <el-input placeholder="请输入学历" v-model="temp.educationalBackground" />
+        </el-form-item>
+        <el-form-item label="政治面貌" prop="politicalAppearance">
+          <el-input placeholder="请输入政治面貌" v-model="temp.politicalAppearance" />
+        </el-form-item>
+        <el-form-item label="手机" prop="phone">
+          <el-input v-model="temp.phone" />
+        </el-form-item>
+        <el-form-item label="账号" prop="username">
+          <el-input v-model="temp.username" />
         </el-form-item>
         <el-form-item label="密码" prop="password">
           <el-input placeholder="请输入密码" v-model="temp.password" show-password></el-input>
-        </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="temp.email" />
-        </el-form-item>
-        <el-form-item label="手机" prop="mobile">
-          <el-input v-model="temp.mobile" />
-        </el-form-item>
-        <el-form-item label="自我简介">
-          <el-input
-            type="textarea"
-            :rows="4"
-            placeholder="请输入自我简介"
-            v-model="temp.introduction">
-          </el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -129,7 +174,7 @@
 <script>
   //
   import { add, update, list, deleteUser } from '@/api/sys/user'
-  import {groupDept} from "@/api/sys/dept";
+  import { groupMechanism } from "@/api/sys/mechanism";
   import waves from '@/directive/waves' // waves directive
   import { parseTime } from '@/utils'
   import Pagination from '@/components/Pagination' // 分页组件
@@ -149,23 +194,28 @@
           sex: 1,
           name: ''
         },
-        deptList: [], // 后台查询出来，分好组的部门信息
+        mechanismList: [], // 后台查询出来，分好组的部门信息
         temp: { // 添加、修改时绑定的表单数据
-          id: undefined,
+          sid: undefined,
           name: '',
+          sex: '',
+          age: '',
+          mid: '',
+          educationalBackground: '',
+          politicalAppearance: '',
+          phone: '',
+          username: '',
           password: '',
-          email: '',
           createTime: '',
-          mobile: '',
-          deptId: '',
-          introduction: ''
+          createId: ''
         },
         title: '添加', // 对话框显示的提示 根据dialogStatus create
         dialogFormVisible: false, // 是否显示对话框
         dialogStatus: '', // 表示表单是添加还是修改的
         rules: {
           // 校验规则
-          username: [{ required: true, message: '用户名必填', trigger: 'blur' }]
+          name: [{ required: true, message: '用户名必填', trigger: 'blur' }],
+          // password: [{required: true, message: '密码大于六位', trigger: 'blur'}]
         }
       }
     },
@@ -173,13 +223,18 @@
     created() {
       this.getList()
       // 在创建时初始化获得部门信息
-      this.getGroupDept()
+      this.getGroupMechanism()
     },
     methods: {
+      /*handleChange (value) {
+        //this.temp.mid = value
+        //alert(value) // 这里的值会输出 value 的一个数组
+      },*/
+
       // 获得分好组的部门信息
-      getGroupDept(){
-        groupDept().then((response) => {
-          this.deptList = response.data.deptList
+      getGroupMechanism(){
+        groupMechanism().then((response) => {
+          this.mechanismList = response.data.mechanismList
         })
       },
       // 去后台取数据的
@@ -197,13 +252,17 @@
       // 重置表单数据
       resetTemp() {
         this.temp = {
-          id: undefined,
+          sid: undefined,
           name: '',
+          sex: '',
+          age: '',
+          mid: '',
+          educationalBackground: '',
+          politicalAppearance: '',
+          phone: '',
+          username: '',
           password: '',
-          email: '',
-          mobile: '',
-          deptId: '',
-          introduction: '',
+          createId: ''
         }
       },
       // 显示添加的对话框
@@ -227,6 +286,7 @@
           // 所有的校验都通过
           if (valid) {
             // 调用api里的sys里的user.js的ajax方法
+            this.temp.createId='1'
             add(this.temp).then((response) => {
 
               // 关闭对话框
@@ -291,7 +351,7 @@
           type: 'warning'
         }).then(() => {
           // 调用ajax去后台删除
-          deleteUser(row.id).then((response) => {
+          deleteUser(row.sid).then((response) => {
             // 刷新数据表格
             this.getList()
             // ajax去后台删除

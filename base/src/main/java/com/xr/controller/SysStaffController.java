@@ -1,9 +1,8 @@
 package com.xr.controller;
 
-import com.xr.entity.SysUser;
-import com.xr.service.SysUserService;
+import com.xr.entity.SysStaff;
+import com.xr.service.SysStaffService;
 import com.xr.util.ResponseResult;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -12,6 +11,7 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,39 +22,28 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("user")
-@Api("用户管理相关接口")
-public class SysUserController {
-    //依赖注入业务类
+@RequestMapping("staff")
+public class SysStaffController {
     @Autowired
-    private SysUserService sysUserService;
+    private SysStaffService sysStaffService;
 
     @RequestMapping("info")
-    @ApiOperation(value = "获得登录用户信息", notes = "获得登录用户信息")
     public ResponseResult info(String token){
-        /*SysUser user = sysUserService.findUserByUserName(token);
-        List<String> roles =  sysUserService.findUserRoles(token);
-        ResponseResult result = new ResponseResult();
-        result.getData().put("roles",roles);
-        result.getData().put("introduction",user.getIntroduction());
-        result.getData().put("avatar",user.getAvatar());
-        result.getData().put("name",user.getName());
-        return result;*/
         Subject subject = SecurityUtils.getSubject();
         Session session = subject.getSession();
         ResponseResult result = new ResponseResult();
         if(token.equals(subject.getSession().getId().toString())){
             // 从shiro的session里获得保存的用户信息
-            SysUser loginUser = (SysUser) session.getAttribute("USER_SESSION");
+            SysStaff loginStaff = (SysStaff) session.getAttribute("USER_SESSION");
             // 获得角色字符串集合
             List<String> roles = (List<String>) session.getAttribute("roles");
-            if(loginUser!=null){
+            if(loginStaff!=null){
                 // 根据用户获得角色字符串数组
-                roles = sysUserService.findUserRoles(loginUser.getName());
+                roles = sysStaffService.findStaffPost(loginStaff.getUsername());
                 result.getData().put("roles",roles);
-                result.getData().put("introduction",loginUser.getIntroduction());
-                result.getData().put("avatar",loginUser.getAvatar());
-                result.getData().put("name",loginUser.getName());
+                /*result.getData().put("introduction",loginStaff.getIntroduction());
+                result.getData().put("avatar",loginStaff.getAvatar());*/
+                result.getData().put("username",loginStaff.getUsername());
                 return result;
             }
         }
@@ -62,19 +51,9 @@ public class SysUserController {
     }
 
     @RequestMapping("login")
-    @ApiOperation(value = "用户登录",notes = "用户登录")
-    public ResponseResult login(SysUser sysUser){
+    public ResponseResult login(SysStaff sysStaff){
         ResponseResult result = new ResponseResult();
-        /*SysUser loginUser = sysUserService.login(sysUser);
-        if(loginUser!=null){
-           // 返回给前台的toke，唯一标识用户
-            result.getData().put("token",loginUser.getName());
-        }else{
-            //登录失败
-            result.getData().put("message","登录失败，用户名或密码错误");
-        }
-        return result;*/
-        UsernamePasswordToken token = new UsernamePasswordToken(sysUser.getName(), sysUser.getPassword());
+        UsernamePasswordToken token = new UsernamePasswordToken(sysStaff.getUsername(), sysStaff.getPassword());
         // 获得登录的主题
         Subject subject = SecurityUtils.getSubject();
         // 调用登录方法
@@ -95,24 +74,21 @@ public class SysUserController {
     }
 
     @RequestMapping("list")
-    @RequiresPermissions("user:list")
+    @RequiresPermissions("role:list")
     @ApiOperation(value = "获得用户列表",notes = "获得用户列表")
-    public ResponseResult list(SysUser sysUser,Integer page,Integer limit){
-        List<SysUser> list1 = sysUserService.list1(sysUser.getName(),(page-1)*limit, limit);
-        List<SysUser> list = sysUserService.list(sysUser);
+    public ResponseResult list(SysStaff sysStaff,Integer page,Integer limit){
+        List<SysStaff> list1 = sysStaffService.list1(sysStaff.getName(),(page-1)*limit, limit);
+        List<SysStaff> list = sysStaffService.list(sysStaff);
         ResponseResult result = new ResponseResult();
-        System.out.println(list1.get(0).getCreateTime());
-        System.out.println(list.get(0).getCreateTime());
-
         result.getData().put("items",list1);
         result.getData().put("total",list.size());
         return result;
     }
 
     @RequestMapping("add")
-    @RequiresPermissions("user:add")
+    @RequiresPermissions("role:add")
     @ApiOperation(value = "添加用户",notes = "添加用户")
-    public ResponseResult add(SysUser sysUser){
+    public ResponseResult add(SysStaff sysStaff){
         //获取系统当前时间
         SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date time=null;
@@ -121,40 +97,43 @@ public class SysUserController {
         }catch (ParseException e){
             e.printStackTrace();
         }
-        sysUser.setCreateTime(time);
+        sysStaff.setCreateTime(time);
+        //默认正常
+        sysStaff.setStaus("1");
         //生成盐（部分，需要存入数据库中）
         String salt=new SecureRandomNumberGenerator().nextBytes().toHex();
         //将原始密码加盐（上面生成的盐），并且用md5算法加密两次，将最后结果存入数据库中
-        String password = new Md5Hash(sysUser.getPassword(),salt,2).toString();
-        sysUser.setSalt(salt);
-        sysUser.setPassword(password);
-        sysUserService.add(sysUser);
+        String password = new Md5Hash(sysStaff.getPassword(),salt,2).toString();
+        sysStaff.setSalt(salt);
+        sysStaff.setPassword(password);
+        sysStaffService.add(sysStaff);
+        System.out.println(sysStaff.toString());
         ResponseResult result = new ResponseResult();
         result.getData().put("message","添加成功");
         return result;
     }
 
     @RequestMapping("update")
-    @RequiresPermissions("user:update")
+    @RequiresPermissions("role:update")
     @ApiOperation(value = "修改用户",notes = "修改用户")
-    public ResponseResult update(SysUser sysUser){
+    public ResponseResult update(SysStaff sysStaff){
         //生成盐（部分，需要存入数据库中）
         String salt=new SecureRandomNumberGenerator().nextBytes().toHex();
         //将原始密码加盐（上面生成的盐），并且用md5算法加密两次，将最后结果存入数据库中
-        String password = new Md5Hash(sysUser.getPassword(),salt,2).toString();
-        sysUser.setSalt(salt);
-        sysUser.setPassword(password);
-        sysUserService.update(sysUser);
+        String password = new Md5Hash(sysStaff.getPassword(),salt,2).toString();
+        sysStaff.setSalt(salt);
+        sysStaff.setPassword(password);
+        sysStaffService.update(sysStaff);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");
         return result;
     }
 
     @RequestMapping("delete")
-    @RequiresPermissions("user:delete")
+    @RequiresPermissions("role:delete")
     @ApiOperation(value = "删除用户",notes = "删除用户")
-    public ResponseResult add(Long id){
-        sysUserService.deleteById(id);
+    public ResponseResult add(Integer id){
+        sysStaffService.deleteById(id);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","删除成功");
         return result;

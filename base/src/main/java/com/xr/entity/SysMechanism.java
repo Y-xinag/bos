@@ -1,9 +1,16 @@
 package com.xr.entity;
 
-import java.io.Serializable;
-import java.util.Date;
+import lombok.Data;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Data
 public class SysMechanism implements Serializable {
+    private List<SysMechanism> mechanisms = new ArrayList<>();
+
     private Integer mid;
 
     private String mechanismName;

@@ -158,16 +158,16 @@ export const asyncRoutes = [
         component: () => import('@/views/sys/user'),
         name: 'userTable',
         meta: {
-          title: '机构管理',
+          title: '员工管理',
           roles: ['admin'] // 或者只能在sub - nav中设置角色
         }
       },
       {
-        path: 'directive',
-        component: () => import('@/views/permission/directive'),
-        name: 'DirectivePermission',
+        path: 'mechanism',
+        component: () => import('@/views/sys/mechanism'),
+        name: 'Mechanism',
         meta: {
-          title: '员工管理'
+          title: '部门管理'
           // 如果不设置角色，则表示:此页面不需要权限
         }
       },

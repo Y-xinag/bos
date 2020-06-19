@@ -105,8 +105,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'zhangsan',
-        password: 'zhangsan'
+        username: 'admin',
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -167,7 +167,7 @@ export default {
         if (valid) {
           this.loading = true
           // 调用store里的user下的login方法  { name: this.loginForm.username, password: this.loginForm.password }
-          this.$store.dispatch('user/login', { name: this.loginForm.username, password: this.loginForm.password })
+          this.$store.dispatch('user/login', this.loginForm)
             .then(() => {
               this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
               this.loading = false

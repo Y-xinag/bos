@@ -16,10 +16,18 @@ public interface SysUserMapper {
      * @param name
      * @return
      */
+
     public List<String> findUserRoles(String name);
 
-    @Select("select id,name,salt,email,mobile,status,dept_id,create_by,create_time,last_update_by,last_update_time,del_flag,introduction,avatar from sys_user LIMIT #{page},#{limit}")
-    List<SysUser> list1(@Param("page") Integer page,@Param("limit") Integer limit);
+    @Select({"<script>",
+            "select * from sys_user where 1=1",
+            "<when test='!name.equals(\"\")'>",
+            "and name like '%${name}%'",
+            "</when>",
+            "limit #{page},#{limit}",
+            "</script>"})
+    //@Select("select id,name,salt,email,mobile,status,dept_id,create_by,create_time,last_update_by,last_update_time,del_flag,introduction,avatar from sys_user LIMIT #{page},#{limit}")
+    List<SysUser> list1(@Param("name") String name, @Param("page") Integer page,@Param("limit") Integer limit);
 
     //权限赋权
     @Select("select * from sys_user where name=#{name}")

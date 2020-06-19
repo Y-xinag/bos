@@ -1,8 +1,11 @@
 package com.xr.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class SysPostPermission implements Serializable {
     private Integer id;
 
@@ -13,8 +16,6 @@ public class SysPostPermission implements Serializable {
     private String stuas;
 
     private Date createTime;
-
-    private Integer createId;
 
     private static final long serialVersionUID = 1L;
 
@@ -56,13 +57,5 @@ public class SysPostPermission implements Serializable {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    public Integer getCreateId() {
-        return createId;
-    }
-
-    public void setCreateId(Integer createId) {
-        this.createId = createId;
     }
 }

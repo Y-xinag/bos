@@ -1,9 +1,15 @@
 package com.xr.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+@Data
 public class SysPost implements Serializable {
+    private List<SysPermission> permissions;
+
     private Integer pid;
 
     private String pname;

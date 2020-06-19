@@ -17,9 +17,9 @@ import java.util.List;
 @SpringBootTest
 public class BaseApplicationTests {
 
-    /*@Test
+    @Test
     public void test() {
-        try {
+        /*try {
             List<String> warnings = new ArrayList<String>();
             boolean overwrite = true;// 加载上面的配置文件
             File configFile = new File("./src/main/resources/generatorConfig.xml");
@@ -30,7 +30,7 @@ public class BaseApplicationTests {
             myBatisGenerator.generate(null);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }*/
+        }*/
+    }
 
 }

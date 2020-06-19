@@ -1,39 +1,39 @@
 import request from '@/utils/request'
 // 从后台读取分好组的部门信息
-export function groupDept() {
+export function groupMechanism() {
   return request({
-    url: '/dept/groupDept',
+    url: '/mechanism/groupMechanism',
     method: 'get'
   })
 }
 
-export function add(data) {
+export function addMechanism(data) {
   return request({
-    url: '/dept/add',
+    url: '/mechanism/add',
     method: 'post',
     data
   })
 }
 
-export function deleteUser(id) {
+export function deleteMechanism(id) {
   return request({
-    url: '/dept/delete',
+    url: '/mechanism/delete',
     method: 'get',
     params: { id }
   })
 }
 
-export function update(data) {
+export function updateMechanism(data) {
   return request({
-    url: '/dept/update',
+    url: '/mechanism/update',
     method: 'post',
     data
   })
 }
 
-export function list(data) {
+export function listMechanism(data) {
   return request({
-    url: '/dept/list',
+    url: '/mechanism/list',
     method: 'post',
     data
   })
