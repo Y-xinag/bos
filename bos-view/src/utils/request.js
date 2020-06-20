@@ -24,8 +24,8 @@ service.interceptors.request.use(
       config.headers['X-Token'] = getToken()
     }
     // 如果是post提交，将json数据转为字符串
-    if(config.method  === 'post'){
-      config.data = qs.stringify(config.data);
+    if (config.method === 'post') {
+      config.data = qs.stringify(config.data)
     }
     // 设置数据提交方式为字符串
     config.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'

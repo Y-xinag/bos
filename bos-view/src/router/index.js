@@ -82,8 +82,8 @@ export const constantRoutes = [
         meta: { title: '主页', icon: 'dashboard', affix: true }
       }
     ]
-  },
-  /*{
+  }
+  /* {
     path: '/sysuser',
     component: Layout,
     children: [
@@ -220,39 +220,45 @@ export const asyncRoutes = [
   // nestedRouter,
   // tableRouter,
 
-  /*{
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/list',
     name: 'Example',
     meta: {
-      title: 'example',
-      icon: 'example'
+      title: '责任纪实',
+      icon: 'example',
+      roles: ['admin', 'editor']
     },
     children: [
       {
-        path: 'create',
-        component: () => import('@/views/example/create'),
-        name: 'CreateArticle',
-        meta: { title: 'createArticle', icon: 'edit' }
+        path: 'RdWorkPlan',
+        component: () => import('@/views/sys/RdWorkPlan'),
+        name: '工作计划',
+        meta: { title: '工作计划', roles: ['admin'] }
       },
       {
-        path: 'edit/:id(\\d+)',
-        component: () => import('@/views/example/edit'),
-        name: 'EditArticle',
-        meta: { title: 'editArticle', noCache: true, activeMenu: '/example/list' },
-        hidden: true
+        path: 'RdWorkDeployment',
+        component: () => import('@/views/sys/RdWorkDeployment'),
+        name: '工作部署',
+        meta: { title: '工作部署', roles: ['admin'] }
       },
       {
-        path: 'list',
-        component: () => import('@/views/example/list'),
-        name: 'ArticleList',
-        meta: { title: 'articleList', icon: 'list' }
+        path: 'RdHonestConversation',
+        component: () => import('@/views/sys/RdHonestConversation'),
+        name: '廉政谈话',
+        meta: { title: '廉政谈话', roles: ['admin'] }
+      },
+      {
+        path: 'RdEntityResponsibility',
+        component: () => import('@/views/sys/RdEntityResponsibility'),
+        name: '主体责任',
+        meta: { title: '主体责任', roles: ['admin'] }
       }
     ]
-  },*/
+  },
 
-  /*{
+  /* {
     path: '/tab',
     component: Layout,
     children: [
@@ -290,7 +296,7 @@ export const asyncRoutes = [
     ]
   },*/
 
-  /*{
+  /* {
     path: '/error-log',
     component: Layout,
     children: [

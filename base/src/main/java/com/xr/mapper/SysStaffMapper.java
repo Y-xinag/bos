@@ -5,6 +5,8 @@ import com.xr.entity.*;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -66,4 +68,11 @@ public interface SysStaffMapper {
     int updateByPrimaryKeySelective(SysStaff record);
 
     int updateByPrimaryKey(SysStaff record);
+
+    @Select("select sid,name,sex,age,educational_background,username,political_appearance,phone,mid,password,pid,create_time,create_id,staus from sys_staff")
+    @Results({
+            @Result(column = "create_id",property = "createId"),
+            @Result(column = "username",property = "username")
+    })
+    List<SysStaff> querylist();
 }

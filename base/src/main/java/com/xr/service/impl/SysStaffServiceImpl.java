@@ -96,4 +96,9 @@ public class SysStaffServiceImpl implements SysStaffService {
         List<SysStaff> list =  sysStaffMapper.selectByExample(example);
         return list;
     }
+
+    @Override
+    public List<SysStaff> querylist() {
+        return sysStaffMapper.querylist();
+    }
 }

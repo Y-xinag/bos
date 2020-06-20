@@ -1,36 +1,36 @@
 package com.xr.mapper;
 
 import com.xr.entity.RdWorkDeployment;
-import com.xr.entity.RdWorkDeploymentExample;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+@Mapper
+@Repository
 public interface RdWorkDeploymentMapper {
-    long countByExample(RdWorkDeploymentExample example);
+    List<RdWorkDeployment> querylist(@Param("page") Integer page, @Param("limit") Integer limit);
 
-    int deleteByExample(RdWorkDeploymentExample example);
+    @Select("select d.id,d.title,d.content,d.create_time,s.username,d.staus from rd_work_deployment d,sys_staff s where d.create_id=s.create_id AND d.state=1")
+    List<RdWorkDeployment> pagenum();
 
-    int deleteByPrimaryKey(Integer id);
+    List<RdWorkDeployment> queryBytitle(@Param("titlename") String titlename,@Param("page") Integer page, @Param("limit") Integer limit);
 
-    int insert(RdWorkDeployment record);
+    @Select("select d.id,d.title,d.content,d.create_time,s.username,d.staus from rd_work_deployment d,sys_staff s where d.create_id=s.create_id AND d.state=1 and d.title LIKE (CONCAT('%',#{titlename},'%'))")
+    List<RdWorkDeployment> pageNum(String titlename);
 
-    int insertSelective(RdWorkDeployment record);
+    @Insert("insert into rd_work_deployment(title,content,create_time,create_id,staus,state) values(#{title},#{content},NOW(),#{createId},#{staus},1)")
+    public void add(RdWorkDeployment rdWorkDeployment);
 
-    List<RdWorkDeployment> selectByExampleWithBLOBs(RdWorkDeploymentExample example);
+    @Update({"<script>update rd_work_deployment set state=0 where id in "
+            +"<foreach collection='list' item='id' index='i' open='(' separator= ',' close = ')'>"
+            +"#{id}"
+            +"</foreach>"
+            +"</script>"
+    })
+    public int delete(List<Integer> list);
 
-    List<RdWorkDeployment> selectByExample(RdWorkDeploymentExample example);
-
-    RdWorkDeployment selectByPrimaryKey(Integer id);
-
-    int updateByExampleSelective(@Param("record") RdWorkDeployment record, @Param("example") RdWorkDeploymentExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") RdWorkDeployment record, @Param("example") RdWorkDeploymentExample example);
-
-    int updateByExample(@Param("record") RdWorkDeployment record, @Param("example") RdWorkDeploymentExample example);
-
-    int updateByPrimaryKeySelective(RdWorkDeployment record);
-
-    int updateByPrimaryKeyWithBLOBs(RdWorkDeployment record);
-
-    int updateByPrimaryKey(RdWorkDeployment record);
+    @Update("update rd_work_deployment set title=#{title},content=#{content},create_id=#{createId},staus=#{staus} where id=#{id}")
+    public void update(RdWorkDeployment rdWorkDeployment);
+    
 }
