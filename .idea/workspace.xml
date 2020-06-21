@@ -48,55 +48,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="雷绳平的责任纪实">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/RdEntityResponsibilityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/RdHonestConversationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/RdWorkDeploymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/RdWorkPlanController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/RdEntityResponsibilityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/RdHonestConversationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/RdWorkDeploymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/RdWorkPlanService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/RdEntityResponsibilityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/RdHonestConversationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/RdWorkDeploymentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/RdWorkPlanServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/RdEntityResponsibility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/RdHonestConversation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/RdWorkDeployment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/RdWorkPlan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/SysStaff.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/RdEntityResponsibility.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/RdHonestConversation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/RdWorkDeployment.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/RdWorkPlan.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/RiskpointwarningController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/RiskpointwarningService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/RiskpointwarningServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/Riskpointwarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/Riskpointwarning.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdEntityResponsibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdEntityResponsibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdEntityResponsibilityExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdHonestConversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdHonestConversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdHonestConversationExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkDeployment.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkDeployment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkDeploymentExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RdWorkPlanExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdEntityResponsibilityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdEntityResponsibilityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdHonestConversationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdHonestConversationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdWorkDeploymentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdWorkDeploymentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdWorkPlanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RdWorkPlanMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdEntityResponsibilityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdEntityResponsibilityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdHonestConversationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdWorkDeploymentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdWorkDeploymentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdWorkPlanMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RdWorkPlanMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Riskpointwarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/Riskpointwarning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/RiskpointwarningExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RiskpointwarningMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/RiskpointwarningMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RiskpointwarningMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/RiskpointwarningMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bos-view/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bos-view/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/utils/request.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,9 +71,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -198,16 +160,16 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\job\bos\base\src\main\resources\mybatis\mapper" />
-      <recent name="E:\IDEA file\bos\base\src\main\resources\mabatis" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\base\src\main\resources\mybatis\mapper" />
       <recent name="D:\workspace\bos-view\src\api\sys" />
       <recent name="D:\workspace\base\src\main\java\com\xr\controller" />
       <recent name="D:\workspace\base\src\main\java\com\xr\service\impl" />
       <recent name="D:\workspace\base\src\main\java\com\xr\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\job\bos\base\src\main\resources\mybatis\mapper" />
+      <recent name="E:\IDEA file\bos\base\src\main\resources\mabatis" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BaseApplication">
@@ -323,7 +285,10 @@
       <workItem from="1592615847809" duration="1326000" />
       <workItem from="1592617223334" duration="180000" />
       <workItem from="1592618248405" duration="4399000" />
-      <workItem from="1592622714277" duration="6570000" />
+      <workItem from="1592622714277" duration="7364000" />
+      <workItem from="1592635131650" duration="921000" />
+      <workItem from="1592648334917" duration="7345000" />
+      <workItem from="1592702578651" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="第三，四节课">
       <created>1591846767603</created>
@@ -346,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592208994804</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="雷绳平的责任纪实">
+      <created>1592630901453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592630901453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,19 +357,19 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="987" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592188976230" />
-    <state x="826" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1592620866939">
+    <state x="826" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1592650447453">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="826" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592620866939" />
+    <state x="826" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592650447453" />
     <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1592365751772" />
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591763413668">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591763413668" />
-    <state x="751" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592620424706">
+    <state x="751" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592636317335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="751" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1592620424706" />
+    <state x="751" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1592636317335" />
     <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592205268232" />
     <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1592208982334">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -407,65 +379,65 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="812" y="193" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592617402581" />
-    <state width="1493" height="232" key="GridCell.Tab.0.bottom" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.0.bottom" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765577" />
-    <state width="1493" height="232" key="GridCell.Tab.0.center" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.0.center" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765576" />
-    <state width="1493" height="232" key="GridCell.Tab.0.left" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.0.left" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765576" />
-    <state width="1493" height="232" key="GridCell.Tab.0.right" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.0.right" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765576" />
-    <state width="1493" height="232" key="GridCell.Tab.1.bottom" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.1.bottom" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765577" />
-    <state width="1493" height="232" key="GridCell.Tab.1.center" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.1.center" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765577" />
-    <state width="1493" height="232" key="GridCell.Tab.1.left" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.1.left" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765577" />
-    <state width="1493" height="232" key="GridCell.Tab.1.right" timestamp="1592628118627">
+    <state width="1493" height="501" key="GridCell.Tab.1.right" timestamp="1592655743888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="232" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592628118627" />
+    <state width="1493" height="501" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592655743888" />
     <state width="1281" height="314" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592488765577" />
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1592622824175">
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1592631486132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592622824175" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592631486132" />
     <state width="1281" height="369" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592444895664" />
-    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1592622824175">
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1592631486131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1592622824175" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1592631486131" />
     <state width="1281" height="369" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592444895664" />
-    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1592622824175">
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1592631486131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1592622824175" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1592631486131" />
     <state width="1281" height="369" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592444895664" />
-    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1592622824175">
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1592631486131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1592622824175" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1592631486131" />
     <state width="1281" height="369" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592444895664" />
     <state width="276" height="551" key="HiddenNamespacesPopup" timestamp="1592188571072">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -480,14 +452,15 @@
     </state>
     <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592629194769" />
     <state x="666" y="106" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1591773499395" />
-    <state x="744" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592209184378">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="744" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592209184378" />
-    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592629620587">
+    <state x="595" y="149" key="Vcs.Push.Dialog.v2" timestamp="1592630919943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1592629620587" />
+    <state x="595" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592630919943" />
+    <state x="744" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592209184378" />
+    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592631162528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1592631162528" />
     <state x="568" y="311" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1592629598878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -258,6 +258,42 @@ export const asyncRoutes = [
     ]
   },
 
+  {
+    path: '/error',
+    component: Layout,
+    redirect: 'noRedirect',
+    name: '廉政文化',
+    meta: {
+      title: '廉政文化',
+      icon: '404'
+    },
+    children: [
+      // {
+      //   path: '401',
+      //   component: () => import('@/views/error-page/401'),
+      //   name: 'Page401',
+      //   meta: { title: 'page401', noCache: true }
+      // },
+      // {
+      //   path: '404',
+      //   component: () => import('@/views/error-page/404'),
+      //   name: 'Page404',
+      //   meta: { title: 'page404', noCache: true }
+      // },
+      {
+        path: 'RdHonestConversation',
+        component: () => import('@/views/sys/RdHonestConversation'),
+        name: '资料集锦',
+        meta: { title: '资料集锦', roles: ['admin'] }
+      },
+      {
+        path: 'Riskpointwarning',
+        component: () => import('@/views/sys/Riskpointwarning'),
+        name: '清风文苑',
+        meta: { title: '清风文苑', roles: ['admin'] }
+      }
+    ]
+  },
   /* {
     path: '/tab',
     component: Layout,
@@ -270,31 +306,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
-  {
-    path: '/error',
-    component: Layout,
-    redirect: 'noRedirect',
-    name: 'ErrorPages',
-    meta: {
-      title: 'errorPages',
-      icon: '404'
-    },
-    children: [
-      {
-        path: '401',
-        component: () => import('@/views/error-page/401'),
-        name: 'Page401',
-        meta: { title: 'page401', noCache: true }
-      },
-      {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
-        meta: { title: 'page404', noCache: true }
-      }
-    ]
-  },*/
+*/
 
   /* {
     path: '/error-log',
