@@ -53,8 +53,6 @@ public class RdWorkDeploymentController {
 
     @RequestMapping("delete")
     public ResponseResult delete(@Param("def") String def){
-        System.out.println("这是一个"+def);
-        System.out.println("进入delete方法");
         List<String> result= Arrays.asList(def.split(","));
         List<Integer> list=new ArrayList<>();
         for (String s: result){
@@ -69,7 +67,6 @@ public class RdWorkDeploymentController {
 
     @RequestMapping("update")
     public ResponseResult update(RdWorkDeployment rdWorkDeployment){
-        System.out.println("进了update方法");
         rdWorkDeploymentService.update(rdWorkDeployment);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");

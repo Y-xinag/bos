@@ -100,53 +100,71 @@
         label-width="70px"
         style="width: 80%; margin-left:50px;"
       >
-        <!--        数据校验要求prop值和temp.属性名一致-->
-        <el-form-item label="用户名" prop="username">
-          <el-select v-model="temp.createId" placeholder="请选择">
+        <el-form-item label="标题" prop="wtitle">
+          <el-input v-model="temp.wtitle" placeholder="请输入标题" />
+        </el-form-item>
+        <el-form-item label="所属部门" prop="wloginid">
+          <el-select v-model="temp.wloginid" placeholder="请选择记录人">
             <el-option
-              v-for="staff in stafflist"
-              :key="staff.createId"
-              :label="staff.username"
-              :value="staff.createId"
-            >
-              <!--              <el-option-group-->
-              <!--                v-for="items in staff.items"-->
-              <!--                :key="items.createId"-->
-              <!--                :label="items.username">-->
-              <!--                <el-option-->
-              <!--                  v-for="item in items.items"-->
-              <!--                  :key="item.createId"-->
-              <!--                  :label="item.username"-->
-              <!--                  :value="item.createId">-->
-              <!--                </el-option>-->
-              <!--              </el-option-group>-->
-            </el-option>
+              v-for="(item, index) in deptlist"
+              :key="index"
+              :value="item.value"
+              :label="item.label"
+            />
+            <!--            <el-option label="admin" value="1"></el-option>-->
+            <!--            <el-option label="sasha" value="2"></el-option>-->
+            <!--            <el-option label="aliss" value="3"></el-option>-->
+          </el-select>
+
+        </el-form-item>
+        <el-form-item label="记录人" prop="warningid">
+          <el-select v-model="temp.warningid" placeholder="请选择记录人">
+            <el-option
+              v-for="(item, index) in people"
+              :key="index"
+              :value="item.value"
+              :label="item.label"
+            />
+            <!--            <el-option label="admin" value="1"></el-option>-->
+            <!--            <el-option label="sasha" value="2"></el-option>-->
+            <!--            <el-option label="aliss" value="3"></el-option>-->
+          </el-select>
+
+        </el-form-item>
+<!--        <el-form-item label="内容">-->
+<!--          <el-input-->
+<!--            v-model="temp.wcontent"-->
+<!--            type="textarea"-->
+<!--            :rows="4"-->
+<!--            placeholder="请输入内容"-->
+<!--          />-->
+<!--        </el-form-item>-->
+        <el-form-item>
+        <el-card style="height: 610px;">
+          <quill-editor v-model="temp.wcontent" ref="myQuillEditor" style="height: 500px;" :options="editorOption">
+          </quill-editor>
+        </el-card>
+        </el-form-item>
+        <el-form-item label="时间" prop="wcreatetime">
+          <el-input v-model="temp.wcreatetime " />
+        </el-form-item>
+        <el-form-item label="创建人" prop="wcreatename">
+          <el-input v-model="temp.wcreatename" placeholder="请输入创建人" />
+        </el-form-item>
+        <el-form-item label="审核状态" prop="staus">
+          <el-select v-model="temp.staus" placeholder="请输入类型">
+            <el-option label="未审核" value="未审核" />
+            <el-option label="审核中" value="审核中" />
+            <el-option label="已审核" value="已审核" />
           </el-select>
         </el-form-item>
-        <el-form-item label="标题" prop="title">
-          <el-input v-model="temp.title" placeholder="请输入用户名" />
-        </el-form-item>
-        <!--        <el-form-item label="密码" prop="password">-->
-        <!--          <el-input placeholder="请输入密码" v-model="temp.password" show-password></el-input>-->
-        <!--        </el-form-item>-->
-        <el-form-item label="内容" prop="content">
-          <el-input v-model="temp.content" />
-        </el-form-item>
-        <el-form-item label="时间" prop="createTime">
-          <el-input v-model="temp.createTime " />
-        </el-form-item>
-        <el-form-item label="状态" prop="status">
-          <el-input v-model="temp.staus" />
-        </el-form-item>
-        <!--        <el-form-item label="自我简介">-->
-        <!--          <el-input-->
-        <!--            type="textarea"-->
-        <!--            :rows="4"-->
-        <!--            placeholder="请输入自我简介"-->
-        <!--            v-model="temp.introduction">-->
-        <!--          </el-input>-->
-        <!--        </el-form-item>-->
       </el-form>
+<!--      <div>-->
+<!--        <el-card style="height: 610px;">-->
+<!--          <quill-editor v-model="content" ref="myQuillEditor" style="height: 500px;" :options="editorOption">-->
+<!--          </quill-editor>-->
+<!--        </el-card>-->
+<!--      </div>-->
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">
           取消
@@ -167,13 +185,19 @@
   import { add, update, list, deleteUser, queryBytitle } from '@/api/sys/Riskpointwarning'
   import { groupStaff } from '@/api/sys/SysStaff'
   import waves from '@/directive/waves' // waves directive
+  import {
+    quillEditor
+  } from 'vue-quill-editor'
+  import 'quill/dist/quill.core.css'
+  import 'quill/dist/quill.snow.css'
+  import 'quill/dist/quill.bubble.css'
   import qs from 'qs'
   import { parseTime } from '@/utils'
   import Pagination from '@/components/Pagination'
   import page from '@/views/permission/page' // 分页组件
   export default {
     name: 'UserTable',
-    components: { Pagination },
+    components: { Pagination, quillEditor },
     directives: { waves },
     data() {
       return {
@@ -190,15 +214,45 @@
         },
         checkBoxData: [],
         stafflist: [], // 后台查询出来，分好组的部门信息
+        deptlist: [
+          {
+            value: 1,
+            label: '纪检部'
+          },
+          {
+            value: 2,
+            label: '组织部'
+          }, {
+            value: 3,
+            label: '宣传部'
+          }
+        ],
+        people: [
+          {
+            value: 1,
+            label: 'admin'
+          },
+          {
+            value: 2,
+            label: 'sasha'
+          }, {
+            value: 3,
+            label: 'aliss'
+          }
+        ],
         temp: { // 添加、修改时绑定的表单数据
           id: undefined,
-          title: '',
-          createTime: new Date(),
+          wtitle: '',
+          wcreatetime: new Date(),
           // password: '',
-          content: '',
+          wcontent: '',
           staus: '',
-          createId: ''
+          wcreatename: '',
+          warningid: '',
+          wloginid: ''
         },
+        content: null,
+        editorOption: {},
         title: '添加', // 对话框显示的提示 根据dialogStatus create
         dialogFormVisible: false, // 是否显示对话框
         dialogStatus: ''// 表示表单是添加还是修改的
@@ -251,12 +305,14 @@
       resetTemp() {
         this.temp = {
           id: undefined,
-          title: '',
+          wtitle: '',
+          wcreatetime: new Date(),
           // password: '',
-          content: '',
+          wcontent: '',
           staus: '',
-          createTime: new Date(),
-          createId: ''
+          wcreatename: '',
+          warningid: '',
+          wloginid: ''
         }
       },
       // 显示添加的对话框

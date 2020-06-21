@@ -44,8 +44,6 @@ public class RdHonestConversationController {
 
     @RequestMapping("delete")
     public ResponseResult delete(@Param("def") String def){
-        System.out.println("这是一个"+def);
-        System.out.println("进入delete方法");
         List<String> result= Arrays.asList(def.split(","));
         List<Integer> list=new ArrayList<>();
         for (String s: result){
@@ -60,7 +58,6 @@ public class RdHonestConversationController {
 
     @RequestMapping("add")
     public ResponseResult add(RdHonestConversation rdHonestConversation){
-        System.out.println("值"+rdHonestConversation);
         rdHonestConversationService.add(rdHonestConversation);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","添加成功");
@@ -69,7 +66,6 @@ public class RdHonestConversationController {
 
     @RequestMapping("update")
     public ResponseResult update(RdHonestConversation rdHonestConversation){
-        System.out.println("进了update方法");
         rdHonestConversationService.update(rdHonestConversation);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");

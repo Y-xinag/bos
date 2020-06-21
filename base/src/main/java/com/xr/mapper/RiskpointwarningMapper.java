@@ -38,6 +38,6 @@ public interface RiskpointwarningMapper {
     })
     public int delete(List<Integer> list);
 
-    @Update("update riskpointwarning set warningId=#{warningid},wTitle=#{wtitle},wContent=#{wcontent},wCreateTime=NOW(),staus=#{staus} where wid=#{wid}")
+    @Update("update riskpointwarning set warningId=#{warningid},wTitle=#{wtitle},wContent=#{wcontent},wLoginId=#{wloginid},wCreateName=#{wcreatename},wCreateTime=NOW(),staus=#{staus} where wid=#{wid}")
     public void update(Riskpointwarning riskpointwarning);
 }

@@ -33,7 +33,6 @@ public class RdWorkPlanController {
     @RequestMapping("queryBytitle")
     //, Integer page, Integer limit
     public ResponseResult queryBytitlelist(String search, Integer page, Integer limit){
-        System.out.println("进了这里rdWorkPlan");
         List<RdWorkPlan> list = rdWorkPlanService.queryBytitle(search,(page - 1) * limit, limit);
         List<RdWorkPlan> pagenum = rdWorkPlanService.pagenum(search);
         ResponseResult result = new ResponseResult();
@@ -52,8 +51,6 @@ public class RdWorkPlanController {
 
     @RequestMapping("delete")
     public ResponseResult delete(@Param("def") String def){
-        System.out.println("这是一个"+def);
-        System.out.println("进入delete方法");
         List<String> result= Arrays.asList(def.split(","));
         List<Integer> list=new ArrayList<>();
         for (String s: result){
@@ -68,7 +65,6 @@ public class RdWorkPlanController {
 
     @RequestMapping("update")
     public ResponseResult update(RdWorkPlan rdWorkPlan){
-        System.out.println("进了update方法");
         rdWorkPlanService.update(rdWorkPlan);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");

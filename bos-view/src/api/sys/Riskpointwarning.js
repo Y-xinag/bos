@@ -5,11 +5,13 @@ export function add(data) {
     url: '/riskpointwarning/add',
     method: 'post',
     params: {
-      title: data.title,
-      createId: data.createId,
-      content: data.content,
-      staus: data.staus,
-      id: data.id
+      wid: data.wid,
+      warningid: data.warningid,
+      wtitle: data.wtitle,
+      wcontent: data.wcontent,
+      wloginid: data.wloginid,
+      wcreatename: data.wcreatename,
+      staus: data.staus
     }
   })
 }
@@ -29,11 +31,13 @@ export function update(data) {
     url: '/riskpointwarning/update',
     method: 'post',
     params: {
-      title: data.title,
-      createId: data.createId,
-      content: data.content,
-      staus: data.staus,
-      id: data.id
+      wid: data.wid,
+      warningid: data.warningid,
+      wtitle: data.wtitle,
+      wcontent: data.wcontent,
+      wloginid: data.wloginid,
+      wcreatename: data.wcreatename,
+      staus: data.staus
     }
   })
 }

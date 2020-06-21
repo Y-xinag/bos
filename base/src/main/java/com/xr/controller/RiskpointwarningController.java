@@ -35,7 +35,6 @@ public class RiskpointwarningController {
     @RequestMapping("queryBytitle")
     //, Integer page, Integer limit
     public ResponseResult queryBytitlelist(String search, Integer page, Integer limit){
-        System.out.println("进了这里rdWorkPlan");
         List<Riskpointwarning> list = riskpointwarningService.queryBytitle(search, (page - 1) * limit, limit);
         List<Riskpointwarning> pagenum = riskpointwarningService.pageNum(search);
         ResponseResult result = new ResponseResult();
@@ -54,8 +53,6 @@ public class RiskpointwarningController {
 
     @RequestMapping("delete")
     public ResponseResult delete(@Param("def") String def){
-        System.out.println("这是一个"+def);
-        System.out.println("进入delete方法");
         List<String> result= Arrays.asList(def.split(","));
         List<Integer> list=new ArrayList<>();
         for (String s: result){
@@ -70,7 +67,6 @@ public class RiskpointwarningController {
 
     @RequestMapping("update")
     public ResponseResult update(Riskpointwarning riskpointwarning){
-        System.out.println("进了update方法");
         riskpointwarningService.update(riskpointwarning);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");

@@ -33,7 +33,6 @@ public class RdEntityResponsibilityController {
     @RequestMapping("queryBytitle")
     //, Integer page, Integer limit
     public ResponseResult queryBytitlelist(String search, Integer page, Integer limit){
-        System.out.println("进了这里rdEntityResponsibility");
         List<RdEntityResponsibility> list = rdEntityResponsibilityService.queryBytitle(search, (page - 1) * limit, limit);
         List<RdEntityResponsibility> pagenum = rdEntityResponsibilityService.pageNum(search);
         ResponseResult result = new ResponseResult();
@@ -52,8 +51,6 @@ public class RdEntityResponsibilityController {
 
     @RequestMapping("delete")
     public ResponseResult delete(@Param("def") String def){
-        System.out.println("这是一个"+def);
-        System.out.println("进入delete方法");
         List<String> result= Arrays.asList(def.split(","));
         List<Integer> list=new ArrayList<>();
         for (String s: result){
@@ -68,7 +65,6 @@ public class RdEntityResponsibilityController {
 
     @RequestMapping("update")
     public ResponseResult update(RdEntityResponsibility rdEntityResponsibility){
-        System.out.println("进了update方法");
         rdEntityResponsibilityService.update(rdEntityResponsibility);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");
