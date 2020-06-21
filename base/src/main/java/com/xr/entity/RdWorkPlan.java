@@ -1,68 +1,22 @@
 package com.xr.entity;
 
-import java.io.Serializable;
+
+import lombok.Data;
+
 import java.util.Date;
 
-public class RdWorkPlan implements Serializable {
-    private Integer id;
 
-    private String title;
+@Data
+public class RdWorkPlan {
 
-    private Date createTime;
+  private int id;
+  private String title;
+  private String content;
+  private Date createTime;
+  private int createId;
+  private String staus;
+  private String state;
+  private SysStaff sysStaff;
 
-    private Integer createId;
 
-    private String staus;
-
-    private String content;
-
-    private static final long serialVersionUID = 1L;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Integer getCreateId() {
-        return createId;
-    }
-
-    public void setCreateId(Integer createId) {
-        this.createId = createId;
-    }
-
-    public String getStaus() {
-        return staus;
-    }
-
-    public void setStaus(String staus) {
-        this.staus = staus == null ? null : staus.trim();
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
 }

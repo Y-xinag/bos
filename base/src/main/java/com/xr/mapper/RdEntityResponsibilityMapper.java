@@ -1,36 +1,37 @@
 package com.xr.mapper;
 
 import com.xr.entity.RdEntityResponsibility;
-import com.xr.entity.RdEntityResponsibilityExample;
+
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+@Mapper
+@Repository
 public interface RdEntityResponsibilityMapper {
-    long countByExample(RdEntityResponsibilityExample example);
 
-    int deleteByExample(RdEntityResponsibilityExample example);
+    List<RdEntityResponsibility> querylist(@Param("page") Integer page, @Param("limit") Integer limit);
 
-    int deleteByPrimaryKey(Integer id);
+    @Select("select e.id,e.title,e.content,e.create_time,s.username,e.staus from rd_entity_responsibility e,sys_staff s where e.create_id=s.create_id AND e.state=1")
+    List<RdEntityResponsibility> pagenum();
 
-    int insert(RdEntityResponsibility record);
+    List<RdEntityResponsibility> queryBytitle(@Param("titlename") String titlename,@Param("page") Integer page, @Param("limit") Integer limit);
 
-    int insertSelective(RdEntityResponsibility record);
+    @Select("select e.id,e.title,e.content,e.create_time,s.username,e.staus from rd_entity_responsibility e,sys_staff s where e.create_id=s.create_id AND e.state=1 and e.title LIKE (CONCAT('%',#{titlename},'%'))")
+    List<RdEntityResponsibility> pageNum(String titlename);
 
-    List<RdEntityResponsibility> selectByExampleWithBLOBs(RdEntityResponsibilityExample example);
+    @Insert("insert into rd_entity_responsibility(title,content,create_time,create_id,staus,state) values(#{title},#{content},NOW(),#{createId},#{staus},1)")
+    public void add(RdEntityResponsibility rdEntityResponsibility);
 
-    List<RdEntityResponsibility> selectByExample(RdEntityResponsibilityExample example);
+    @Update({"<script>update rd_entity_responsibility set state=0 where id in "
+            +"<foreach collection='list' item='id' index='i' open='(' separator= ',' close = ')'>"
+            +"#{id}"
+            +"</foreach>"
+            +"</script>"
+    })
+    public int delete(List<Integer> list);
 
-    RdEntityResponsibility selectByPrimaryKey(Integer id);
-
-    int updateByExampleSelective(@Param("record") RdEntityResponsibility record, @Param("example") RdEntityResponsibilityExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") RdEntityResponsibility record, @Param("example") RdEntityResponsibilityExample example);
-
-    int updateByExample(@Param("record") RdEntityResponsibility record, @Param("example") RdEntityResponsibilityExample example);
-
-    int updateByPrimaryKeySelective(RdEntityResponsibility record);
-
-    int updateByPrimaryKeyWithBLOBs(RdEntityResponsibility record);
-
-    int updateByPrimaryKey(RdEntityResponsibility record);
+    @Update("update rd_entity_responsibility set title=#{title},content=#{content},create_id=#{createId},staus=#{staus} where id=#{id}")
+    public void update(RdEntityResponsibility rdEntityResponsibility);
 }

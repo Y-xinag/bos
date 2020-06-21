@@ -138,4 +138,18 @@ public class SysStaffController {
         result.getData().put("message","删除成功");
         return result;
     }
+
+    @RequestMapping("querylist")
+    public ResponseResult list(){
+        System.out.println("进来了");
+        List<SysStaff> list = sysStaffService.querylist();
+        for (SysStaff sysStaff : list) {
+            System.out.println(sysStaff.getUsername());
+            System.out.println(sysStaff.getCreateId());
+        }
+        ResponseResult result = new ResponseResult();
+        result.getData().put("list",list);
+        result.getData().put("total",list.size());
+        return result;
+    }
 }

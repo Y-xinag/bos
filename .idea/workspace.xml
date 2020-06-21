@@ -1,7 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="" />
+    <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysMechanismController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaffPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaffPostExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffPostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysMechanismService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysMechanismServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/SysMechanismUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/mechanism.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/config/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysMechanism.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysMechanism.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostPermissionExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPostPermissionExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaffExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysStaffExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/util/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/CommonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysStaffMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysStaffMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/.postcssrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/check-versions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/vue-loader.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/webpack.base.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/webpack.dev.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/build/webpack.prod.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/config/dev.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/config/prod.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/http/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/http/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/http/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/http/interface.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/mock/mock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/views/404.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/views/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/src/views/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-ui/static/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/api/sys/dept.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/sys/mechanism.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/components/Pagination/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/components/Pagination/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/store/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

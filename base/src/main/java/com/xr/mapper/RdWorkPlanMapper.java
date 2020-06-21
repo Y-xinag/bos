@@ -1,36 +1,40 @@
 package com.xr.mapper;
 
 import com.xr.entity.RdWorkPlan;
-import com.xr.entity.RdWorkPlanExample;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+@Mapper
+@Repository
 public interface RdWorkPlanMapper {
-    long countByExample(RdWorkPlanExample example);
 
-    int deleteByExample(RdWorkPlanExample example);
+    List<RdWorkPlan> querylist(@Param("page") Integer page, @Param("limit") Integer limit);
 
-    int deleteByPrimaryKey(Integer id);
+    @Select("select w.create_id,w.title,w.content,s.username,w.create_time,w.staus from rd_work_plan w ,sys_staff s where w.create_id=s.create_id AND w.state=1")
+    List<RdWorkPlan> pageNum();
 
-    int insert(RdWorkPlan record);
+    List<RdWorkPlan> queryBytitle(@Param("titlename") String titlename,@Param("page") Integer page, @Param("limit") Integer limit);
 
-    int insertSelective(RdWorkPlan record);
+    @Select("select w.id,w.create_id,w.title,w.content,s.username,w.create_time,w.staus from rd_work_plan w ,sys_staff s where w.create_id=s.create_id AND w.state=1 and w.title LIKE (CONCAT('%',#{titlename},'%'))")
+    List<RdWorkPlan> pagenum(String titlename);
 
-    List<RdWorkPlan> selectByExampleWithBLOBs(RdWorkPlanExample example);
+    @Insert("insert into rd_work_plan(title,content,create_time,create_id,staus,state) values(#{title},#{content},NOW(),#{createId},#{staus},1)")
+    public void add(RdWorkPlan rdWorkPlan);
 
-    List<RdWorkPlan> selectByExample(RdWorkPlanExample example);
+    @Update({"<script>update rd_work_plan set state=0 where id in "
+            +"<foreach collection='list' item='id' index='i' open='(' separator= ',' close = ')'>"
+            +"#{id}"
+            +"</foreach>"
+            +"</script>"
+    })
+    public int delete(List<Integer> list);
 
-    RdWorkPlan selectByPrimaryKey(Integer id);
+    @Update("update rd_work_plan set title=#{title},content=#{content},create_id=#{createId},staus=#{staus} where id=#{id}")
+    public void update(RdWorkPlan rdWorkPlan);
 
-    int updateByExampleSelective(@Param("record") RdWorkPlan record, @Param("example") RdWorkPlanExample example);
+    @Select("select *from queryById where id=#{id}")
+    public RdWorkPlan queryById(Integer id);
 
-    int updateByExampleWithBLOBs(@Param("record") RdWorkPlan record, @Param("example") RdWorkPlanExample example);
-
-    int updateByExample(@Param("record") RdWorkPlan record, @Param("example") RdWorkPlanExample example);
-
-    int updateByPrimaryKeySelective(RdWorkPlan record);
-
-    int updateByPrimaryKeyWithBLOBs(RdWorkPlan record);
-
-    int updateByPrimaryKey(RdWorkPlan record);
 }
