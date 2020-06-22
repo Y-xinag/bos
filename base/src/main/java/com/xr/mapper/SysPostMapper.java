@@ -3,9 +3,36 @@ package com.xr.mapper;
 import com.xr.entity.SysPost;
 import com.xr.entity.SysPostExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import com.xr.entity.SysStaff;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface SysPostMapper {
+
+    @Select({"<script>",
+            "select pid, pname, mid, message, create_time createTime, create_id createId, staus",
+            " from sys_post where 1=1",
+            "<when test='pname!=null'>",
+            "and pname like '%${pname}%'",
+            "</when>",
+            "limit #{page},#{limit}",
+            "</script>"})
+        //@Select("select id,name,salt,email,mobile,status,dept_id,create_by,create_time,last_update_by,last_update_time,del_flag,introduction,avatar from sys_user LIMIT #{page},#{limit}")
+    List<SysPost> list1(@Param("pname") String pname, @Param("page") Integer page, @Param("limit") Integer limit);
+    @Select("select * from sys_post")
+    List<SysPost> list();
+
+    @Delete("delete from sys_post where pid=#{pid}")
+    void delete(Integer pid);
+
+    @Update("update sys_post set pname=#{pname}, mid=#{mid}, message=#{message}, create_time=#{createTime}, create_id=#{createId}, staus=#{staus} where pid=#{pid}")
+    void update(SysPost sysPost);
+
     long countByExample(SysPostExample example);
 
     int deleteByExample(SysPostExample example);

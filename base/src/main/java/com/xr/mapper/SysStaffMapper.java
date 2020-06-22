@@ -5,8 +5,6 @@ import com.xr.entity.*;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -38,6 +36,8 @@ public interface SysStaffMapper {
             "</script>"})
         //@Select("select id,name,salt,email,mobile,status,dept_id,create_by,create_time,last_update_by,last_update_time,del_flag,introduction,avatar from sys_user LIMIT #{page},#{limit}")
     List<SysStaff> list1(@Param("name") String name, @Param("page") Integer page, @Param("limit") Integer limit);
+    @Select("select sid, name, sex, age, age, educational_background educationalBackground, political_appearance politicalAppearance, phone, mid, username, pid, create_time createTime, create_id, staus from sys_staff")
+    List<SysStaff> list();
 
     //权限赋权
     @Select("select * from sys_staff where username=#{username}")
@@ -68,11 +68,4 @@ public interface SysStaffMapper {
     int updateByPrimaryKeySelective(SysStaff record);
 
     int updateByPrimaryKey(SysStaff record);
-
-    @Select("select sid,name,sex,age,educational_background,username,political_appearance,phone,mid,password,pid,create_time,create_id,staus from sys_staff")
-    @Results({
-            @Result(column = "create_id",property = "createId"),
-            @Result(column = "username",property = "username")
-    })
-    List<SysStaff> querylist();
 }

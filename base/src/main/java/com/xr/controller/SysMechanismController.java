@@ -25,7 +25,6 @@ public class SysMechanismController {
         ResponseResult result = new ResponseResult();
         List<SysMechanism> sysMechanisms = sysMechanismService.groupMechanism();
         result.getData().put("mechanismList", sysMechanisms);
-        System.out.println(result.getData());
         return result;
     }
 
@@ -34,6 +33,7 @@ public class SysMechanismController {
     public ResponseResult list(SysMechanism sysMechanism, Integer page,Integer limit){
         ResponseResult result = new ResponseResult();
         List<SysMechanism> sysMechanisms = sysMechanismService.MechanismList(sysMechanism.getMechanismName(), (page-1)*limit, limit);
+        System.out.println(sysMechanisms.toString());
         List<SysMechanism> sysMechanisms1 = sysMechanismService.MechanismSize();
         result.getData().put("items",sysMechanisms);
         result.getData().put("total",sysMechanisms1.size());
@@ -54,8 +54,10 @@ public class SysMechanismController {
         }
         sysMechanism.setCreateTime(time);
         //默认正常
-        sysMechanism.setStaus("1");
-        System.out.println(sysMechanism);
+        sysMechanism.setStaus("正常");
+        //System.out.println("add："+sysMechanism);
+        sysMechanismService.MechanismAdd(sysMechanism);
+        result.getData().put("message","添加成功");
         return result;
     }
 
@@ -63,7 +65,9 @@ public class SysMechanismController {
     @RequiresPermissions("mechanism:delete")
     public ResponseResult delete(Integer mid){
         ResponseResult result = new ResponseResult();
-        System.out.println(mid);
+        //System.out.println("delete:"+mid);
+        sysMechanismService.MechanismDelete(mid);
+        result.getData().put("message","删除成功");
         return result;
     }
 
@@ -71,7 +75,9 @@ public class SysMechanismController {
     @RequiresPermissions("mechanism:update")
     public ResponseResult update(SysMechanism sysMechanism){
         ResponseResult result = new ResponseResult();
-        System.out.println(sysMechanism);
+        //sysMechanism.setSysStaff(null);
+        System.out.println("update:"+sysMechanism);
+        result.getData().put("message","修改成功");
         return result;
     }
 

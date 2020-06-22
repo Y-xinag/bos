@@ -172,9 +172,9 @@ export const asyncRoutes = [
         }
       },
       {
-        path: 'role',
-        component: () => import('@/views/permission/role'),
-        name: 'RolePermission',
+        path: 'Post',
+        component: () => import('@/views/sys/Post'),
+        name: 'Post',
         meta: {
           title: '岗位管理',
           roles: ['admin']
@@ -190,9 +190,9 @@ export const asyncRoutes = [
         }
       },
       {
-        path: '',
-        component: () => import('@/views/permission/role'),
-        name: '',
+        path: 'Log',
+        component: () => import('@/views/sys/Log'),
+        name: 'Log',
         meta: {
           title: '日志管理',
           roles: ['admin']
@@ -206,9 +206,9 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: 'index',
-        component: () => import('@/views/icons/index'),
-        name: 'Icons',
+        path: 'educationPolitics',
+        component: () => import('@/views/sys/educationPolitics'),
+        name: 'educationPolitics',
         meta: { title: '廉政教育', icon: 'people', noCache: true }
       }
     ]

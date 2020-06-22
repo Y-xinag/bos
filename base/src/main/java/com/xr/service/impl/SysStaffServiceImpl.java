@@ -84,21 +84,8 @@ public class SysStaffServiceImpl implements SysStaffService {
     }
 
     @Override
-    public List<SysStaff> list(SysStaff sysStaff) {
-        SysStaffExample example = new SysStaffExample();
-        SysStaffExample.Criteria criteria = example.createCriteria();
-        if(sysStaff!=null){
-            if(sysStaff.getUsername()!=null){
-                criteria.andUsernameLike("%"+sysStaff.getUsername()+"%");
-            }
-            // 还可以添加其他属性的条件
-        }
-        List<SysStaff> list =  sysStaffMapper.selectByExample(example);
+    public List<SysStaff> list() {
+        List<SysStaff> list = sysStaffMapper.list();
         return list;
-    }
-
-    @Override
-    public List<SysStaff> querylist() {
-        return sysStaffMapper.querylist();
     }
 }

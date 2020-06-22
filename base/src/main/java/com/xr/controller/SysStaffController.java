@@ -73,15 +73,36 @@ public class SysStaffController {
         return result;
     }
 
+
+    @RequestMapping("index")
+    @RequiresPermissions("role:index")
+    public ResponseResult index(){
+        ResponseResult result = new ResponseResult();
+        Subject subject = SecurityUtils.getSubject();
+        Session session = subject.getSession();
+        SysStaff loginStaff = (SysStaff) session.getAttribute("USER_SESSION");
+        //System.out.println(loginStaff.getSid());
+        result.getData().put("createId",loginStaff.getSid());
+        return result;
+    }
+
     @RequestMapping("list")
     @RequiresPermissions("role:list")
     @ApiOperation(value = "获得用户列表",notes = "获得用户列表")
     public ResponseResult list(SysStaff sysStaff,Integer page,Integer limit){
         List<SysStaff> list1 = sysStaffService.list1(sysStaff.getName(),(page-1)*limit, limit);
-        List<SysStaff> list = sysStaffService.list(sysStaff);
+        List<SysStaff> list = sysStaffService.list();
         ResponseResult result = new ResponseResult();
         result.getData().put("items",list1);
         result.getData().put("total",list.size());
+        return result;
+    }
+
+    @RequestMapping("group")
+    public ResponseResult groupStaff(){
+        List<SysStaff> list = sysStaffService.list();
+        ResponseResult result = new ResponseResult();
+        result.getData().put("staffList",list);
         return result;
     }
 
@@ -117,12 +138,14 @@ public class SysStaffController {
     @RequiresPermissions("role:update")
     @ApiOperation(value = "修改用户",notes = "修改用户")
     public ResponseResult update(SysStaff sysStaff){
-        //生成盐（部分，需要存入数据库中）
-        String salt=new SecureRandomNumberGenerator().nextBytes().toHex();
-        //将原始密码加盐（上面生成的盐），并且用md5算法加密两次，将最后结果存入数据库中
-        String password = new Md5Hash(sysStaff.getPassword(),salt,2).toString();
-        sysStaff.setSalt(salt);
-        sysStaff.setPassword(password);
+        if (sysStaff.getPassword()!=null){
+            //生成盐（部分，需要存入数据库中）
+            String salt=new SecureRandomNumberGenerator().nextBytes().toHex();
+            //将原始密码加盐（上面生成的盐），并且用md5算法加密两次，将最后结果存入数据库中
+            String password = new Md5Hash(sysStaff.getPassword(),salt,2).toString();
+            sysStaff.setSalt(salt);
+            sysStaff.setPassword(password);
+        }
         sysStaffService.update(sysStaff);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","修改成功");
@@ -132,24 +155,10 @@ public class SysStaffController {
     @RequestMapping("delete")
     @RequiresPermissions("role:delete")
     @ApiOperation(value = "删除用户",notes = "删除用户")
-    public ResponseResult add(Integer id){
+    public ResponseResult delete(Integer id){
         sysStaffService.deleteById(id);
         ResponseResult result = new ResponseResult();
         result.getData().put("message","删除成功");
-        return result;
-    }
-
-    @RequestMapping("querylist")
-    public ResponseResult list(){
-        System.out.println("进来了");
-        List<SysStaff> list = sysStaffService.querylist();
-        for (SysStaff sysStaff : list) {
-            System.out.println(sysStaff.getUsername());
-            System.out.println(sysStaff.getCreateId());
-        }
-        ResponseResult result = new ResponseResult();
-        result.getData().put("list",list);
-        result.getData().put("total",list.size());
         return result;
     }
 }

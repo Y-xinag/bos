@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div class="filter-container">
-      <el-input v-model="listQuery.mechanismName" placeholder="部门名" style="width: 200px;" class="filter-item"/>
+      <el-input v-model="listQuery.pname" placeholder="岗位名" style="width: 200px;" class="filter-item"/>
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="getList">
         查询
       </el-button>
@@ -21,23 +21,23 @@
     >
       <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80">
         <template slot-scope="scope">
-          <span>{{ scope.row.mid }}</span>
+          <span>{{ scope.row.pid }}</span>
         </template>
       </el-table-column>
 
-      <el-table-column label="部门名" min-width="150px">
+      <el-table-column label="岗位名" min-width="150px">
         <template slot-scope="{row}">
-          <span class="link-type">{{ row.mechanismName }}</span>
+          <span class="link-type">{{ row.pname }}</span>
         </template>
       </el-table-column>
-      <!--<el-table-column label="负责人" min-width="150px">
-        <template slot-scope="{row}">
-          <span class="link-type">{{ row.sysStaff.name }}</span>
-        </template>
-      </el-table-column>-->
       <el-table-column label="创建时间" width="150px" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.createTime | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="岗位介绍" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.message }}</span>
         </template>
       </el-table-column>
       <el-table-column label="状态" min-width="150px">
@@ -67,34 +67,31 @@
       -->
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 80%; margin-left:50px;">
         <!--        数据校验要求prop值和temp.属性名一致-->
-        <el-form-item label="部门名" prop="mechanismName">
-          <el-input placeholder="请输入用户名" v-model="temp.mechanismName" />
+        <el-form-item label="岗位名" prop="mechanismName">
+          <el-input placeholder="请输入用户名" v-model="temp.pname" />
         </el-form-item>
-        <el-form-item label="负责人" prop="branch">
-          <el-select v-model="temp.sid" placeholder="请选择">
-            <el-option
-              v-for="item in staffList"
-              :key="temp.sid"
-              :label="item.name"
-              :value="item.sid">
-            </el-option>
+        <el-form-item label="部门" prop="mid">
+          <el-select v-model="temp.mid" placeholder="请选择">
+            <el-option-group
+              v-for="group in mechanismList"
+              :key="group.mid"
+              :label="group.mechanismName">
+              <el-option
+                v-for="items in group.mechanisms"
+                :key="items.mid"
+                :label="items.mechanismName"
+                :value="items.mid">
+              </el-option>
+            </el-option-group>
           </el-select>
         </el-form-item>
-        <el-form-item label="上级部门" prop="branch">
-          <el-select v-model="temp.branch" placeholder="请选择">
-            <el-option
-              v-for="item in options"
-              :key="temp.mid"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-            <el-option
-              v-for="items in list"
-              :key="items.mid"
-              :label="items.mechanismName"
-              :value="items.mid">
-            </el-option>
-          </el-select>
+        <el-form-item label="岗位介绍">
+          <el-input
+            type="textarea"
+            :rows="4"
+            placeholder="请输入岗位描述"
+            v-model="temp.message">
+          </el-input>
         </el-form-item>
 
       </el-form>
@@ -117,19 +114,16 @@
 <script>
 import Pagination from "@/components/Pagination/index";
 import waves from "@/directive/waves";
-import {listMechanism, updateMechanism, deleteMechanism, addMechanism} from "@/api/sys/mechanism";
-import {staffid, groupstaff} from "@/api/sys/user";
+import { staffid, groupstaff } from "@/api/sys/user";
+import { postAdd, postDelete, postlist, postUpdate } from "@/api/sys/post";
+import {groupMechanism} from "@/api/sys/mechanism";
 
 export default {
-  name: "Mechanism",
+  name: "Post",
   components: { Pagination },
   directives: { waves },
   data() {
     return {
-      options: [{
-        value: '0',
-        label: '无上级'
-      }],
       tableKey: 0,
       list: null, // 后台返回，给数据表格展示的数据
       total: 0, // 总记录数
@@ -141,12 +135,14 @@ export default {
         name: ''
       },
       staffId: '',
-      staffList: null, // 后台查询出来，分好组的部门信息
+      staffList: null,
+      mechanismList: [], // 后台查询出来，分好组的部门信息
       temp: { // 添加、修改时绑定的表单数据
-        mid: undefined,
-        mechanismName: '',
-        sid: '',
-        branch: '',
+        pid: undefined,
+        pname: '',
+        mid: '',
+        message: '',
+        createTime: '',
         createId: ''
       },
       title: '添加', // 对话框显示的提示 根据dialogStatus create
@@ -154,7 +150,7 @@ export default {
       dialogStatus: '', // 表示表单是添加还是修改的
       rules: {
         // 校验规则
-        mechanismName: [{ required: true, message: '用户名必填', trigger: 'blur' }],
+        pname: [{ required: true, message: '用户名必填', trigger: 'blur' }]
         // password: [{required: true, message: '密码大于六位', trigger: 'blur'}]
       }
     }
@@ -164,16 +160,22 @@ export default {
     this.getList()
     // 在创建时初始化获得部门信息
     this.getGroupStaff()
+    this.getGroupMechanism()
     this.getStaffId()
   },
   methods: {
-    // 获得分好组的部门信息
-    getGroupStaff () {
+    getGroupStaff() {
       groupstaff().then((response) => {
         this.staffList = response.data.staffList
       })
     },
-    getStaffId () {
+    // 获得分好组的部门信息
+    getGroupMechanism() {
+      groupMechanism().then((response) => {
+        this.mechanismList = response.data.mechanismList
+      })
+    },
+    getStaffId() {
       staffid().then((response) => {
         this.staffId = response.data.createId
       })
@@ -183,7 +185,7 @@ export default {
       // 开始转圈圈
       this.listLoading = true
       // debugger // 调试
-      listMechanism(this.listQuery).then(response => {
+      postlist(this.listQuery).then(response => {
         this.list = response.data.items
         this.total = response.data.total
         // 转圈圈结束
@@ -193,20 +195,21 @@ export default {
     // 重置表单数据
     resetTemp() {
       this.temp = {
-        mid: undefined,
-        mechanismName: '',
-        sid: '',
-        branch: '',
+        pid: undefined,
+        pname: '',
+        mid: '',
+        message: '',
+        createTime: '',
         createId: ''
       }
     },
     // 显示添加的对话框
-    handleCreate () {
+    handleCreate() {
       // 重置表单数据
       this.resetTemp()
       // 点击确定时，是执行添加操作
       this.dialogStatus = 'create'
-      this.title="添加部门"
+      this.title = '添加岗位'
       // 显示对话框
       this.dialogFormVisible = true
       this.$nextTick(() => {
@@ -221,9 +224,8 @@ export default {
         // 所有的校验都通过
         if (valid) {
           // 调用api里的sys里的user.js的ajax方法
-          this.temp.createId=this.staffId
-          addMechanism(this.temp).then((response) => {
-
+          this.temp.createId = this.staffId
+          postAdd(this.temp).then((response) => {
             // 关闭对话框
             this.dialogFormVisible = false
             // 刷新数据表格里的数据
@@ -246,7 +248,7 @@ export default {
       // 将对话框里的确定点击时，改为执行修改操作
       this.dialogStatus = 'update'
       // 修改标题
-      this.title = '修改部门'
+      this.title = '修改岗位'
       // 显示修改对话框
       this.dialogFormVisible = true
       this.$nextTick(() => {
@@ -260,10 +262,9 @@ export default {
         // 表单校验通过
         if (valid) {
           // 将temp拷贝到tempData
-          //this.temp.sysStaff=null
           const tempData = Object.assign({}, this.temp)
           // 进行ajax提交
-          updateMechanism(tempData).then((response) => {
+          postUpdate(tempData).then((response) => {
             // 提交完毕，关闭对话框
             this.dialogFormVisible = false
             // 刷新数据表格
@@ -281,13 +282,13 @@ export default {
     },
     handleDelete(row) {
       // 先弹确认取消框
-      this.$confirm('确认删除【'+row.mechanismName+'】的信息吗?', '提示', {
+      this.$confirm('确认删除【' + row.pname + '】的信息吗?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
         // 调用ajax去后台删除
-        deleteMechanism(row.mid).then((response) => {
+        postDelete(row.pid).then((response) => {
           // 刷新数据表格
           this.getList()
           // ajax去后台删除
@@ -302,9 +303,8 @@ export default {
         this.$message({
           type: 'info',
           message: '已取消删除'
-        });
-      });
-
+        })
+      })
     }
   }
 }

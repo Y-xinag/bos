@@ -44,6 +44,5 @@ public interface SysStaffService {
     public void add(SysStaff sysStaff);
     public void deleteById(Integer id);
     public void update(SysStaff sysStaff);
-    public List<SysStaff> list(SysStaff sysStaff);
-    List<SysStaff> querylist();
+    public List<SysStaff> list();
 }

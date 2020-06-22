@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div class="filter-container">
-      <el-input v-model="listQuery.mechanismName" placeholder="部门名" style="width: 200px;" class="filter-item"/>
+      <el-input v-model="listQuery.title" placeholder="岗位名" style="width: 200px;" class="filter-item"/>
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="getList">
         查询
       </el-button>
@@ -21,20 +21,35 @@
     >
       <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80">
         <template slot-scope="scope">
-          <span>{{ scope.row.mid }}</span>
+          <span>{{ scope.row.id }}</span>
         </template>
       </el-table-column>
 
-      <el-table-column label="部门名" min-width="150px">
+      <el-table-column label="标题" min-width="150px">
         <template slot-scope="{row}">
-          <span class="link-type">{{ row.mechanismName }}</span>
+          <span class="link-type">{{ row.title }}</span>
         </template>
       </el-table-column>
-      <!--<el-table-column label="负责人" min-width="150px">
+      <el-table-column label="咨询来源" min-width="150px">
         <template slot-scope="{row}">
-          <span class="link-type">{{ row.sysStaff.name }}</span>
+          <span class="link-type">{{ row.source }}</span>
         </template>
-      </el-table-column>-->
+      </el-table-column>
+      <el-table-column label="资讯类型" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.type }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="资讯内容" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.content }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="资讯发布时间" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.time }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="创建时间" width="150px" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.createTime | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
@@ -67,34 +82,32 @@
       -->
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 80%; margin-left:50px;">
         <!--        数据校验要求prop值和temp.属性名一致-->
-        <el-form-item label="部门名" prop="mechanismName">
-          <el-input placeholder="请输入用户名" v-model="temp.mechanismName" />
+        <el-form-item label="标题" prop="title">
+          <el-input placeholder="请输入标题" v-model="temp.title" />
         </el-form-item>
-        <el-form-item label="负责人" prop="branch">
-          <el-select v-model="temp.sid" placeholder="请选择">
-            <el-option
-              v-for="item in staffList"
-              :key="temp.sid"
-              :label="item.name"
-              :value="item.sid">
-            </el-option>
+        <el-form-item label="来源" prop="source">
+          <el-input placeholder="请输入来源" v-model="temp.source" />
+        </el-form-item>
+        <el-form-item label="咨询类型" prop="type">
+          <el-select v-model="temp.type" placeholder="选择咨询类型">
+            <el-option label="领导讲话" value="领导讲话" />
+            <el-option label="廉政要闻" value="廉政要闻" />
+            <el-option label="文件制度" value="文件制度" />
+            <el-option label="警钟长鸣" value="警钟长鸣" />
           </el-select>
         </el-form-item>
-        <el-form-item label="上级部门" prop="branch">
-          <el-select v-model="temp.branch" placeholder="请选择">
-            <el-option
-              v-for="item in options"
-              :key="temp.mid"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-            <el-option
-              v-for="items in list"
-              :key="items.mid"
-              :label="items.mechanismName"
-              :value="items.mid">
-            </el-option>
-          </el-select>
+        <el-form-item label="咨询内容">
+          <el-card style="height: 610px;">
+            <quill-editor v-model="temp.content" ref="myQuillEditor" style="height: 500px;" :options="editorOption">
+            </quill-editor>
+          </el-card>
+        </el-form-item>
+        <el-form-item label="咨询发布时间" prop="time">
+          <el-date-picker
+            v-model="temp.time"
+            type="datetime"
+            placeholder="选择日期">
+          </el-date-picker>
         </el-form-item>
 
       </el-form>
@@ -115,21 +128,21 @@
 </template>
 
 <script>
-import Pagination from "@/components/Pagination/index";
-import waves from "@/directive/waves";
-import {listMechanism, updateMechanism, deleteMechanism, addMechanism} from "@/api/sys/mechanism";
-import {staffid, groupstaff} from "@/api/sys/user";
+import Pagination from '@/components/Pagination/index'
+import waves from '@/directive/waves'
+import { staffid, groupstaff } from '@/api/sys/user'
+import { educationPoliticslist, educationPoliticsAdd, educationPoliticsDelete, educationPoliticsUpdate } from '@/api/sys/educationPolitics'
+import { quillEditor } from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
 
 export default {
-  name: "Mechanism",
-  components: { Pagination },
+  name: "educationPolitics",
+  components: { Pagination, quillEditor },
   directives: { waves },
   data() {
     return {
-      options: [{
-        value: '0',
-        label: '无上级'
-      }],
       tableKey: 0,
       list: null, // 后台返回，给数据表格展示的数据
       total: 0, // 总记录数
@@ -141,20 +154,25 @@ export default {
         name: ''
       },
       staffId: '',
-      staffList: null, // 后台查询出来，分好组的部门信息
+      staffList: null,
+      mechanismList: [], // 后台查询出来，分好组的部门信息
       temp: { // 添加、修改时绑定的表单数据
-        mid: undefined,
-        mechanismName: '',
-        sid: '',
-        branch: '',
-        createId: ''
+        id: undefined,
+        title: '',
+        source: '',
+        type: '',
+        content: '',
+        time: '',
+        createTime: '',
+        createId: '',
+        staus: ''
       },
       title: '添加', // 对话框显示的提示 根据dialogStatus create
       dialogFormVisible: false, // 是否显示对话框
       dialogStatus: '', // 表示表单是添加还是修改的
       rules: {
         // 校验规则
-        mechanismName: [{ required: true, message: '用户名必填', trigger: 'blur' }],
+        pname: [{ required: true, message: '用户名必填', trigger: 'blur' }]
         // password: [{required: true, message: '密码大于六位', trigger: 'blur'}]
       }
     }
@@ -167,13 +185,12 @@ export default {
     this.getStaffId()
   },
   methods: {
-    // 获得分好组的部门信息
-    getGroupStaff () {
+    getGroupStaff() {
       groupstaff().then((response) => {
         this.staffList = response.data.staffList
       })
     },
-    getStaffId () {
+    getStaffId() {
       staffid().then((response) => {
         this.staffId = response.data.createId
       })
@@ -183,7 +200,7 @@ export default {
       // 开始转圈圈
       this.listLoading = true
       // debugger // 调试
-      listMechanism(this.listQuery).then(response => {
+      educationPoliticslist(this.listQuery).then(response => {
         this.list = response.data.items
         this.total = response.data.total
         // 转圈圈结束
@@ -193,20 +210,24 @@ export default {
     // 重置表单数据
     resetTemp() {
       this.temp = {
-        mid: undefined,
-        mechanismName: '',
-        sid: '',
-        branch: '',
-        createId: ''
+        id: undefined,
+        title: '',
+        source: '',
+        type: '',
+        content: '',
+        time: '',
+        createTime: '',
+        createId: '',
+        staus: ''
       }
     },
     // 显示添加的对话框
-    handleCreate () {
+    handleCreate() {
       // 重置表单数据
       this.resetTemp()
       // 点击确定时，是执行添加操作
       this.dialogStatus = 'create'
-      this.title="添加部门"
+      this.title = '添加岗位'
       // 显示对话框
       this.dialogFormVisible = true
       this.$nextTick(() => {
@@ -221,9 +242,8 @@ export default {
         // 所有的校验都通过
         if (valid) {
           // 调用api里的sys里的user.js的ajax方法
-          this.temp.createId=this.staffId
-          addMechanism(this.temp).then((response) => {
-
+          this.temp.createId = this.staffId
+          educationPoliticsAdd(this.temp).then((response) => {
             // 关闭对话框
             this.dialogFormVisible = false
             // 刷新数据表格里的数据
@@ -246,7 +266,7 @@ export default {
       // 将对话框里的确定点击时，改为执行修改操作
       this.dialogStatus = 'update'
       // 修改标题
-      this.title = '修改部门'
+      this.title = '修改岗位'
       // 显示修改对话框
       this.dialogFormVisible = true
       this.$nextTick(() => {
@@ -260,10 +280,9 @@ export default {
         // 表单校验通过
         if (valid) {
           // 将temp拷贝到tempData
-          //this.temp.sysStaff=null
           const tempData = Object.assign({}, this.temp)
           // 进行ajax提交
-          updateMechanism(tempData).then((response) => {
+          educationPoliticsUpdate(tempData).then((response) => {
             // 提交完毕，关闭对话框
             this.dialogFormVisible = false
             // 刷新数据表格
@@ -281,13 +300,13 @@ export default {
     },
     handleDelete(row) {
       // 先弹确认取消框
-      this.$confirm('确认删除【'+row.mechanismName+'】的信息吗?', '提示', {
+      this.$confirm('确认删除【' + row.title + '】的信息吗?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
         // 调用ajax去后台删除
-        deleteMechanism(row.mid).then((response) => {
+        educationPoliticsDelete(row.id).then((response) => {
           // 刷新数据表格
           this.getList()
           // ajax去后台删除
@@ -302,9 +321,8 @@ export default {
         this.$message({
           type: 'info',
           message: '已取消删除'
-        });
-      });
-
+        })
+      })
     }
   }
 }

@@ -34,3 +34,19 @@ export function list(data) {
     data
   })
 }
+
+// 用户id
+export function staffid() {
+  return request({
+    url: '/staff/index',
+    method: 'get'
+  })
+}
+
+// 用户
+export function groupstaff() {
+  return request({
+    url: '/staff/group',
+    method: 'get'
+  })
+}

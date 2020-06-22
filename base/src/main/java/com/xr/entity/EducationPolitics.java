@@ -1,8 +1,13 @@
 package com.xr.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class EducationPolitics implements Serializable {
     private Integer id;
 
@@ -12,8 +17,12 @@ public class EducationPolitics implements Serializable {
 
     private String type;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd") // 前台传过来的日期格式转换
+    @JsonFormat(pattern = "yyyy-MM-dd") // 后台的JAVA类型，转为JSON字符串
     private Date time;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd") // 前台传过来的日期格式转换
+    @JsonFormat(pattern = "yyyy-MM-dd") // 后台的JAVA类型，转为JSON字符串
     private Date createTime;
 
     private Integer createId;

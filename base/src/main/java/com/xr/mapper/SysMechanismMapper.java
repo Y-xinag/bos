@@ -3,8 +3,8 @@ package com.xr.mapper;
 import com.xr.entity.SysMechanism;
 import com.xr.entity.SysMechanismExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -18,6 +18,11 @@ public interface SysMechanismMapper {
             "</when>",
             "limit #{page},#{limit}",
             "</script>"})
+    /*@Results(id = "employeeMap", value = {
+            @Result(property = "mid", column = "mid"),//加此行，否则id值为空
+            @Result(property = "sysStaff", column = "sid", one = @One(select =
+                    "com.xr.mapper.SysStaffMapper.selectByPrimaryKey"))
+    })*/
     List<SysMechanism> MechanismList(@Param("mechanismName") String mechanismName, @Param("page") Integer page, @Param("limit") Integer limit);
     @Select("select * from sys_mechanism")
     List<SysMechanism> MechanismSize();
