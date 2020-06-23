@@ -32,7 +32,7 @@ public class SysMechanismController {
     @RequiresPermissions("mechanism:list")
     public ResponseResult list(SysMechanism sysMechanism, Integer page,Integer limit){
         ResponseResult result = new ResponseResult();
-        List<SysMechanism> sysMechanisms = sysMechanismService.MechanismList(sysMechanism.getMechanismName(), (page-1)*limit, limit);
+        List<SysMechanism> sysMechanisms = sysMechanismService.MechanismList(sysMechanism.getSid(), sysMechanism.getStaus(), sysMechanism.getMechanismName(), (page-1)*limit, limit);
         System.out.println(sysMechanisms.toString());
         List<SysMechanism> sysMechanisms1 = sysMechanismService.MechanismSize();
         result.getData().put("items",sysMechanisms);

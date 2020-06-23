@@ -181,9 +181,9 @@ export const asyncRoutes = [
         }
       },
       {
-        path: '',
-        component: () => import('@/views/permission/role'),
-        name: '',
+        path: 'postPermission',
+        component: () => import('@/views/sys/postPermission'),
+        name: 'postPermission',
         meta: {
           title: '权限管理',
           roles: ['admin']

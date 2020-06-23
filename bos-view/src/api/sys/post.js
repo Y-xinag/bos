@@ -31,3 +31,11 @@ export function postUpdate(data) {
     data
   })
 }
+
+// 用户
+export function grouppost() {
+  return request({
+    url: '/post/group',
+    method: 'get'
+  })
+}

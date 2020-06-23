@@ -1,7 +1,20 @@
 <template>
   <div class="app-container">
     <div class="filter-container">
-      <el-input v-model="listQuery.mechanismName" placeholder="部门名" style="width: 200px;" class="filter-item"/>
+      部门名：<el-input v-model="listQuery.mechanismName" placeholder="部门名" style="width: 200px;" class="filter-item"/>
+      负责人：<el-select v-model="listQuery.sid" placeholder="请选择负责人" style="width: 200px;" class="filter-item">
+        <el-option
+          v-for="item in staffList"
+          :key="temp.sid"
+          :label="item.name"
+          :value="item.sid">
+        </el-option>
+      <el-option
+        :label="null"
+        :value="null">
+      </el-option>
+      </el-select>
+      状态：<el-input v-model="listQuery.staus" placeholder="状态" style="width: 200px;" class="filter-item"/>
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="getList">
         查询
       </el-button>
@@ -138,7 +151,7 @@ export default {
         page: 1, // 分页需要的当前页
         limit: 10, // 分页需要的每页显示多少条
         sex: 1,
-        name: ''
+        // name: ''
       },
       staffId: '',
       staffList: null, // 后台查询出来，分好组的部门信息

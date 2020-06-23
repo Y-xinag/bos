@@ -3,6 +3,7 @@ package com.xr.controller;
 import com.xr.entity.EducationPolitics;
 import com.xr.entity.SysMechanism;
 import com.xr.entity.SysPost;
+import com.xr.entity.SysStaff;
 import com.xr.service.SysPostService;
 import com.xr.util.ResponseResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -20,6 +21,14 @@ import java.util.List;
 public class SysPostController {
     @Autowired
     private SysPostService sysPostService;
+
+    @RequestMapping("group")
+    public ResponseResult groupStaff(){
+        List<SysPost> list = sysPostService.list();
+        ResponseResult result = new ResponseResult();
+        result.getData().put("postList",list);
+        return result;
+    }
 
     @RequestMapping("list")
     @RequiresPermissions("post:list")

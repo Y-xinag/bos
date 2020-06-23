@@ -74,6 +74,7 @@ public class MyShiroRealm extends AuthorizingRealm {
                     return null;
                 }
                 if (sysStaff.getStaus() == "2") { //账户删除
+
                     throw new LockedAccountException();
                 } else if (sysStaff.getStaus() == "3"){ //账户离职
                     throw new LockedAccountException();

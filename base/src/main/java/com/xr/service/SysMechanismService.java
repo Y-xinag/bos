@@ -8,7 +8,7 @@ import java.util.List;
 public interface SysMechanismService {
 
     //分页查询,显示全部
-    List<SysMechanism> MechanismList(@Param("mechanismName") String mechanismName, @Param("page") Integer page, @Param("limit") Integer limit);
+    List<SysMechanism> MechanismList(@Param("sid") Integer sid, @Param("staus") String staus, @Param("mechanismName") String mechanismName, @Param("page") Integer page, @Param("limit") Integer limit);
     List<SysMechanism> MechanismSize();
 
     List<SysMechanism> groupMechanism();

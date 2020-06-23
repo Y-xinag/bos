@@ -4,6 +4,7 @@ import com.xr.entity.*;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -46,6 +47,14 @@ public interface SysStaffMapper {
     List<SysPost> findSysPostBySysStaffSid(@Param("s") SysStaff sysStaff);
     @Select("select m.permission_code 'permissionCode' from sys_post p,sys_permission m,sys_post_permission pm where p.pid=pm.postid and m.id=pm.pid and p.pname=#{p.pname}")
     List<SysPermission> findSysPermissionBySysPostPid(@Param("p") SysPost sysPost);
+
+    /*@Results(id = "employeeMap", value = {
+            @Result(property = "mid", column = "mid"),//加此行，否则id值为空
+            @Result(property = "sysStaff", column = "sid", one = @One(select =
+                    "com.xr.mapper.SysStaffMapper.selectByPrimaryKey"))
+    })*/
+    @Insert("insert into sys_staff_post (post_id, staff_id) values(#{pid}, #{sid})")
+    int authority(@Param("pid") Integer pid, @Param("sid") Integer sid);
 
     long countByExample(SysStaffExample example);
 

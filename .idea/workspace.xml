@@ -1,49 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="廉洁教育+系统管理（权限管理除外）">
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/EducationPoliticsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysLogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysPostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/EducationPoliticsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysLogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysPostService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/EducationPoliticsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysLogServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysPostServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/educationPolitics.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/log.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/Log.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/Post.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/educationPolitics.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/postPermission.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysMechanismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysMechanismController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysPostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/EducationPolitics.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/EducationPolitics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/EducationPoliticsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/EducationPoliticsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysLogMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysMechanismService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysMechanismService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysMechanismServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysMechanismServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/util/SysMechanismUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/SysMechanismUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/api/sys/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/sys/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bos-view/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/mechanism.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/mechanism.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/ue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/ue.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,10 +31,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="Interface" />
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -286,7 +260,7 @@
       <workItem from="1592444587030" duration="29355000" />
       <workItem from="1592787986575" duration="7265000" />
       <workItem from="1592796087806" duration="8155000" />
-      <workItem from="1592812445287" duration="24626000" />
+      <workItem from="1592812445287" duration="33389000" />
     </task>
     <task id="LOCAL-00001" summary="第三，四节课">
       <created>1591846767603</created>
@@ -309,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592208994804</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="廉洁教育+系统管理（权限管理除外）">
+      <created>1592849603612</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592849603612</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,10 +321,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="987" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592188976230" />
-    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser" timestamp="1592817281854">
+    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser" timestamp="1592877549280">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1592817281854" />
+    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1592877549280" />
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591763413668">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -352,46 +333,46 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592205268232" />
-    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1592849576320">
+    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1592849597250">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576320" />
+    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1592849597250" />
     <state x="1016" y="226" key="FileChooserDialogImpl" timestamp="1592812344236">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1016" y="226" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1592812344236" />
-    <state width="1281" height="308" key="GridCell.Tab.0.bottom" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.0.bottom" timestamp="1592878781568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
-    <state width="1281" height="308" key="GridCell.Tab.0.center" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
+    <state width="1867" height="308" key="GridCell.Tab.0.center" timestamp="1592878781567">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
-    <state width="1281" height="308" key="GridCell.Tab.0.left" timestamp="1592849576399">
+    <state width="1867" height="308" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781567" />
+    <state width="1867" height="308" key="GridCell.Tab.0.left" timestamp="1592878781567">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576399" />
-    <state width="1281" height="308" key="GridCell.Tab.0.right" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781567" />
+    <state width="1867" height="308" key="GridCell.Tab.0.right" timestamp="1592878781567">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
-    <state width="1281" height="308" key="GridCell.Tab.1.bottom" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781567" />
+    <state width="1867" height="308" key="GridCell.Tab.1.bottom" timestamp="1592878781568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
-    <state width="1281" height="308" key="GridCell.Tab.1.center" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
+    <state width="1867" height="308" key="GridCell.Tab.1.center" timestamp="1592878781568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
-    <state width="1281" height="308" key="GridCell.Tab.1.left" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
+    <state width="1867" height="308" key="GridCell.Tab.1.left" timestamp="1592878781568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
-    <state width="1281" height="308" key="GridCell.Tab.1.right" timestamp="1592849576400">
+    <state width="1867" height="308" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
+    <state width="1867" height="308" key="GridCell.Tab.1.right" timestamp="1592878781568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1281" height="308" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592849576400" />
+    <state width="1867" height="308" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
     <state width="1281" height="369" key="GridCell.Tab.2.bottom" timestamp="1592797203870">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -420,10 +401,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="666" y="106" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592842999102" />
-    <state x="744" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592718499533">
+    <state x="744" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592849617738">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="744" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592718499533" />
+    <state x="744" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592849617738" />
     <state x="995" y="416" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592718477885">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -50,3 +50,11 @@ export function groupstaff() {
     method: 'get'
   })
 }
+
+export function weight(data) {
+  return request({
+    url: '/staff/weight',
+    method: 'post',
+    data
+  })
+}

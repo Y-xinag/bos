@@ -16,8 +16,8 @@ public class SysMechanismServiceImpl implements SysMechanismService {
     private SysMechanismMapper sysMechanismMapper;
 
     @Override
-    public List<SysMechanism> MechanismList(String mechanismName, Integer page, Integer limit) {
-        return sysMechanismMapper.MechanismList(mechanismName, page, limit);
+    public List<SysMechanism> MechanismList(Integer sid, String staus, String mechanismName, Integer page, Integer limit) {
+        return sysMechanismMapper.MechanismList(sid, staus, mechanismName, page, limit);
     }
 
     @Override

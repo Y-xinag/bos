@@ -69,6 +69,11 @@ public class SysStaffServiceImpl implements SysStaffService {
     }
 
     @Override
+    public int authority(Integer pid, Integer sid) {
+        return sysStaffMapper.authority(pid, sid);
+    }
+
+    @Override
     public void add(SysStaff sysStaff) {
         sysStaffMapper.insertSelective(sysStaff);
     }

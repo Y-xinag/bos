@@ -71,6 +71,9 @@
       <!--     自定义列-->
       <el-table-column label="操作" align="center" width="230" class-name="small-padding fixed-width">
         <template slot-scope="{row}">
+          <el-button type="primary" size="mini" @click="handlePid(row)">
+            赋权
+          </el-button>
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
             修改
           </el-button>
@@ -86,6 +89,38 @@
     <!--  绑定了title，是一个数组里取的，表示是修改的标题还是添加的标题
       visible.sync 对话框是否显示
     -->
+    <el-dialog :title="title" :visible.sync="empowerment" style="width: 80%">
+      <el-form ref="dataForm1" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 80%; margin-left:50px;">
+        <!--        数据校验要求prop值和temp.属性名一致-->
+        <el-form-item label="岗位" prop="pid">
+          <el-select v-model="temp.pid" placeholder="请选择">
+            <el-option
+              v-for="item in postList"
+              :key="item.pid"
+              :label="item.pname"
+              :value="item.pid">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="updatePid()">立即创建</el-button>
+          <el-button @click="empowerment = false">取消</el-button>
+        </el-form-item>
+
+        <!--<div slot="footer" class="dialog-footer">
+          <el-button @click="empowerment = false">
+            取消
+          </el-button>
+          &lt;!&ndash;
+            dialogStatus==='create'?createData():updateData()
+            dialogStatus需要我们根据情况去改变
+          &ndash;&gt;
+          <el-button type="primary" @click="updatePid()">
+            确认
+          </el-button>
+        </div>-->
+      </el-form>
+    </el-dialog>
     <el-dialog :title="title" :visible.sync="dialogFormVisible" style="width: 80%">
       <!--
           rules:校验规则
@@ -139,11 +174,37 @@
             :props="{ value: 'mid', label: 'mechanismName'}"
             @change="handleChange"></el-cascader>-->
         </el-form-item>
-        <el-form-item label="学历" prop="educationalBackground">
-          <el-input placeholder="请输入学历" v-model="temp.educationalBackground" />
+        <el-form-item label="岗位" prop="pid">
+          <el-select v-model="temp.pid" placeholder="请选择">
+            <el-option
+              v-for="item in postList"
+              :key="item.pid"
+              :label="item.pname"
+              :value="item.pid">
+            </el-option>
+          </el-select>
         </el-form-item>
-        <el-form-item label="政治面貌" prop="politicalAppearance">
+        <!--<el-form-item label="学历" prop="educationalBackground">
+          <el-input placeholder="请输入学历" v-model="temp.educationalBackground" />
+        </el-form-item>-->
+        <el-form-item label="学历" prop="educationalBackground">
+          <el-select v-model="temp.educationalBackground" placeholder="请输入学历">
+            <el-option label="大专" value="大专" />
+            <el-option label="二本" value="二本" />
+            <el-option label="一本" value="一本" />
+            <el-option label="硕士" value="硕士" />
+            <el-option label="博士" value="博士" />
+          </el-select>
+        </el-form-item>
+        <!--<el-form-item label="政治面貌" prop="politicalAppearance">
           <el-input placeholder="请输入政治面貌" v-model="temp.politicalAppearance" />
+        </el-form-item>-->
+        <el-form-item label="政治面貌" prop="politicalAppearance">
+          <el-select v-model="temp.politicalAppearance" placeholder="请输入面貌">
+            <el-option label="群众" value="群众" />
+            <el-option label="团员" value="团员" />
+            <el-option label="预备党员" value="预备党员" />
+          </el-select>
         </el-form-item>
         <el-form-item label="手机" prop="phone">
           <el-input v-model="temp.phone" />
@@ -173,11 +234,12 @@
 
 <script>
 //
-import {add, update, list, deleteUser, staffid} from '@/api/sys/user'
-import { groupMechanism } from "@/api/sys/mechanism";
+import { add, update, list, deleteUser, staffid, weight } from '@/api/sys/user'
+import { groupMechanism } from '@/api/sys/mechanism'
 import waves from '@/directive/waves' // waves directive
 import { parseTime } from '@/utils'
-import Pagination from '@/components/Pagination' // 分页组件
+import Pagination from '@/components/Pagination'
+import { grouppost } from '@/api/sys/post' // 分页组件
 export default {
   name: 'userTable',
   components: { Pagination },
@@ -196,6 +258,7 @@ export default {
       },
       staffId: '',
       mechanismList: [], // 后台查询出来，分好组的部门信息
+      postList: [], // 后台查询出来，岗位信息
       temp: { // 添加、修改时绑定的表单数据
         sid: undefined,
         name: '',
@@ -212,6 +275,7 @@ export default {
       },
       title: '添加', // 对话框显示的提示 根据dialogStatus create
       dialogFormVisible: false, // 是否显示对话框
+      empowerment: false,
       dialogStatus: '', // 表示表单是添加还是修改的
       rules: {
         // 校验规则
@@ -226,9 +290,14 @@ export default {
     // 在创建时初始化获得部门信息
     this.getGroupMechanism()
     this.getStaffId()
+    this.getGroupPost()
   },
   methods: {
-
+    getGroupPost() {
+      grouppost().then((response) => {
+        this.postList = response.data.postList
+      })
+    },
     getStaffId() {
       staffid().then((response) => {
         this.staffId = response.data.createId
@@ -274,7 +343,7 @@ export default {
       this.resetTemp()
       // 点击确定时，是执行添加操作
       this.dialogStatus = 'create'
-      this.title="添加用户"
+      this.title = '添加用户'
       // 显示对话框
       this.dialogFormVisible = true
       this.$nextTick(() => {
@@ -297,6 +366,45 @@ export default {
             // 刷新数据表格里的数据
             this.getList()
             // 显示一个通知
+            this.$notify({
+              title: '成功',
+              message: response.data.message,
+              type: 'success',
+              duration: 2000
+            })
+          })
+        }
+      })
+    },
+    // 显示赋权对话框
+    handlePid(row) {
+      // 将row里面与temp里属性相同的值，进行copy
+      this.temp = Object.assign({}, row) // copy obj
+      // 将对话框里的确定点击时，改为执行修改操作
+      // this.dialogStatus = 'update'
+      // 修改标题
+      this.title = '用户赋权'
+      // 显示修改对话框
+      this.empowerment = true
+      this.$nextTick(() => {
+        // 清除校验
+        this.$refs['dataForm1'].clearValidate()
+      })
+    },
+    // 执行修改操作
+    updatePid() {
+      this.$refs['dataForm1'].validate((valid) => {
+        // 表单校验通过
+        if (valid) {
+          // 将temp拷贝到tempData
+          const tempData = Object.assign({}, this.temp)
+          // 进行ajax提交
+          weight(tempData).then((response) => {
+            // 提交完毕，关闭对话框
+            this.empowerment = false
+            // 刷新数据表格
+            this.getList()
+            // 显示通知
             this.$notify({
               title: '成功',
               message: response.data.message,

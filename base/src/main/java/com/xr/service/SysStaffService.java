@@ -2,6 +2,7 @@ package com.xr.service;
 
 import com.xr.entity.SysStaff;
 import com.xr.entity.SysUser;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -40,6 +41,9 @@ public interface SysStaffService {
      * @return
      */
     public SysStaff findSysStaffSysPostSysPermission(String name);
+
+
+    int authority(Integer pid, Integer sid);
 
     public void add(SysStaff sysStaff);
     public void deleteById(Integer id);

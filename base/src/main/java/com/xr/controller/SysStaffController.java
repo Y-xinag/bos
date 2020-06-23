@@ -161,4 +161,14 @@ public class SysStaffController {
         result.getData().put("message","删除成功");
         return result;
     }
+
+    @RequestMapping("weight")
+    @RequiresPermissions("role:weight")
+    @ApiOperation(value = "用户赋权",notes = "用户赋权")
+    public ResponseResult weight(SysStaff sysStaff){
+        sysStaffService.authority(Integer.parseInt(sysStaff.getPid()), sysStaff.getSid());
+        ResponseResult result = new ResponseResult();
+        result.getData().put("message","赋权成功");
+        return result;
+    }
 }

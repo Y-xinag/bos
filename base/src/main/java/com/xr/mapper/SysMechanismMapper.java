@@ -16,14 +16,15 @@ public interface SysMechanismMapper {
             "<when test='mechanismName!=null'>",
             "and mechanism_name like '%${mechanismName}%'",
             "</when>",
+            "<when test='sid!=null'>",
+            "and sid = #{sid}",
+            "</when>",
+            "<when test='staus!=null'>",
+            "and staus = #{staus}",
+            "</when>",
             "limit #{page},#{limit}",
             "</script>"})
-    /*@Results(id = "employeeMap", value = {
-            @Result(property = "mid", column = "mid"),//加此行，否则id值为空
-            @Result(property = "sysStaff", column = "sid", one = @One(select =
-                    "com.xr.mapper.SysStaffMapper.selectByPrimaryKey"))
-    })*/
-    List<SysMechanism> MechanismList(@Param("mechanismName") String mechanismName, @Param("page") Integer page, @Param("limit") Integer limit);
+    List<SysMechanism> MechanismList(@Param("sid") Integer sid, @Param("staus") String staus, @Param("mechanismName") String mechanismName, @Param("page") Integer page, @Param("limit") Integer limit);
     @Select("select * from sys_mechanism")
     List<SysMechanism> MechanismSize();
 
