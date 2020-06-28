@@ -5,10 +5,7 @@ import com.xr.entity.SysPostExample;
 import java.util.List;
 
 import com.xr.entity.SysStaff;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -32,6 +29,15 @@ public interface SysPostMapper {
 
     @Update("update sys_post set pname=#{pname}, mid=#{mid}, message=#{message}, create_time=#{createTime}, create_id=#{createId}, staus=#{staus} where pid=#{pid}")
     void update(SysPost sysPost);
+
+
+    @Select("select * from sys_post")
+    @Results(id = "employeeMap", value = {
+            @Result(property = "pid", column = "pid"),//加此行，否则id值为空
+            @Result(property = "sysPermission", column = "id", one = @One(select =
+                    "com.xr.mapper.SysPermissionMapper.selectByPrimaryKey"))
+    })
+    List<SysPost> postPermissionList();
 
     long countByExample(SysPostExample example);
 

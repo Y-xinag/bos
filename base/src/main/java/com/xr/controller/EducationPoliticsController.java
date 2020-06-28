@@ -2,6 +2,7 @@ package com.xr.controller;
 
 import com.xr.entity.EducationPolitics;
 import com.xr.entity.SysLog;
+import com.xr.log.MyLog;
 import com.xr.service.EducationPoliticsService;
 import com.xr.util.ResponseResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -20,6 +21,7 @@ public class EducationPoliticsController {
     @Autowired
     private EducationPoliticsService educationPoliticsService;
 
+    @MyLog(operation = "查询廉洁教育", type = "查询")
     @RequestMapping("list")
     @RequiresPermissions("educationPolitics:list")
     public ResponseResult list(EducationPolitics educationPolitics, Integer page, Integer limit){
@@ -31,6 +33,7 @@ public class EducationPoliticsController {
         return result;
     }
 
+    @MyLog(operation = "增加廉洁教育", type = "增加")
     @RequestMapping("add")
     @RequiresPermissions("educationPolitics:add")
     public ResponseResult add(EducationPolitics educationPolitics){
@@ -52,6 +55,7 @@ public class EducationPoliticsController {
         return result;
     }
 
+    @MyLog(operation = "修改廉洁教育", type = "修改")
     @RequestMapping("update")
     @RequiresPermissions("educationPolitics:update")
     public ResponseResult update(EducationPolitics educationPolitics){
@@ -62,6 +66,7 @@ public class EducationPoliticsController {
         return result;
     }
 
+    @MyLog(operation = "删除廉洁教育", type = "删除")
     @RequestMapping("delete")
     @RequiresPermissions("educationPolitics:delete")
     public ResponseResult delete(Integer id){

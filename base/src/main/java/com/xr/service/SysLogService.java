@@ -8,7 +8,7 @@ import java.util.List;
 public interface SysLogService {
 
     List<SysLog> list();
-    List<SysLog> list1(String name, Integer page, Integer limit);
+    List<SysLog> list1(String type, String name, Integer page, Integer limit);
 
     //添加
     void LogAdd(SysLog sysLog);

@@ -16,9 +16,12 @@ public interface SysLogMapper {
             "<when test='title!=null'>",
             "and title like '%${title}%'",
             "</when>",
+            "<when test='type!=null'>",
+            "and type like '%${type}%'",
+            "</when>",
             "limit #{page},#{limit}",
             "</script>"})
-    List<SysLog> list1(@Param("title") String title, @Param("page") Integer page, @Param("limit") Integer limit);
+    List<SysLog> list1(@Param("type") String type, @Param("title") String title, @Param("page") Integer page, @Param("limit") Integer limit);
     @Select("select * from sys_log")
     List<SysLog> list();
 

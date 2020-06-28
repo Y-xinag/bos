@@ -20,10 +20,15 @@ public class SysLogController {
     @RequiresPermissions("log:list")
     public ResponseResult list(SysLog sysLog, Integer page, Integer limit){
         ResponseResult result = new ResponseResult();
-        List<SysLog> sysLogs = sysLogService.list1(sysLog.getTitle(), (page-1)*limit, limit);
+        List<SysLog> sysLogs = sysLogService.list1(sysLog.getType(), sysLog.getTitle(), (page-1)*limit, limit);
         List<SysLog> sysLogs1 = sysLogService.list();
         result.getData().put("items",sysLogs);
         result.getData().put("total",sysLogs1.size());
+        /*if(sysLog.getType() == null && sysLog.getTitle() == null){
+            result.getData().put("total",sysLogs1.size());
+        }else {
+            result.getData().put("total",sysLogs.size());
+        }*/
         return result;
     }
 

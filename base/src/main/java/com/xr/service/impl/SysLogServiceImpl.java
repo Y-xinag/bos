@@ -20,8 +20,8 @@ public class SysLogServiceImpl implements SysLogService {
     }
 
     @Override
-    public List<SysLog> list1(String name, Integer page, Integer limit) {
-        List<SysLog> sysLogs = sysLogMapper.list1(name, page, limit);
+    public List<SysLog> list1(String type, String name, Integer page, Integer limit) {
+        List<SysLog> sysLogs = sysLogMapper.list1(type, name, page, limit);
         return sysLogs;
     }
 

@@ -4,7 +4,9 @@ import com.xr.entity.SysPermission;
 import com.xr.entity.SysPermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SysPermissionMapper {
     long countByExample(SysPermissionExample example);
 

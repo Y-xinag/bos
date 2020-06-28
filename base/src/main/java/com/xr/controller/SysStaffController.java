@@ -1,6 +1,7 @@
 package com.xr.controller;
 
 import com.xr.entity.SysStaff;
+import com.xr.log.MyLog;
 import com.xr.service.SysStaffService;
 import com.xr.util.ResponseResult;
 import io.swagger.annotations.ApiOperation;
@@ -50,6 +51,7 @@ public class SysStaffController {
         return null;
     }
 
+    @MyLog(operation = "登录", type = "登录")
     @RequestMapping("login")
     public ResponseResult login(SysStaff sysStaff){
         ResponseResult result = new ResponseResult();
@@ -63,6 +65,7 @@ public class SysStaffController {
         return result;
     }
 
+    @MyLog(operation = "注销", type = "注销")
     @RequestMapping("logout")
     @ApiOperation(value = "注销用户",notes = "注销用户")
     public ResponseResult logout(){
@@ -72,7 +75,6 @@ public class SysStaffController {
         subject.logout();
         return result;
     }
-
 
     @RequestMapping("index")
     @RequiresPermissions("role:index")
@@ -86,6 +88,7 @@ public class SysStaffController {
         return result;
     }
 
+    @MyLog(operation = "查询员工信息", type = "查询")
     @RequestMapping("list")
     @RequiresPermissions("role:list")
     @ApiOperation(value = "获得用户列表",notes = "获得用户列表")
@@ -106,6 +109,7 @@ public class SysStaffController {
         return result;
     }
 
+    @MyLog(operation = "添加用户", type = "添加")
     @RequestMapping("add")
     @RequiresPermissions("role:add")
     @ApiOperation(value = "添加用户",notes = "添加用户")
@@ -134,6 +138,7 @@ public class SysStaffController {
         return result;
     }
 
+    @MyLog(operation = "修改用户", type = "修改")
     @RequestMapping("update")
     @RequiresPermissions("role:update")
     @ApiOperation(value = "修改用户",notes = "修改用户")
@@ -152,6 +157,7 @@ public class SysStaffController {
         return result;
     }
 
+    @MyLog(operation = "删除用户", type = "删除")
     @RequestMapping("delete")
     @RequiresPermissions("role:delete")
     @ApiOperation(value = "删除用户",notes = "删除用户")
@@ -162,6 +168,7 @@ public class SysStaffController {
         return result;
     }
 
+    @MyLog(operation = "用户赋权", type = "赋权")
     @RequestMapping("weight")
     @RequiresPermissions("role:weight")
     @ApiOperation(value = "用户赋权",notes = "用户赋权")

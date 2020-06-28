@@ -31,7 +31,8 @@ public class EducationPoliticsServiceImpl implements EducationPoliticsService {
 
     @Override
     public void EducationPoliticsUpdate(EducationPolitics educationPolitics) {
-        educationPoliticsMapper.updateByPrimaryKey(educationPolitics);
+        //educationPoliticsMapper.updateByPrimaryKey(educationPolitics);
+        educationPoliticsMapper.updateByPrimaryKeySelective(educationPolitics);
     }
 
     @Override

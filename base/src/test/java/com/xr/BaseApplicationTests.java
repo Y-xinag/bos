@@ -6,8 +6,8 @@ import org.junit.Test;
 /*import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
-import org.mybatis.generator.internal.DefaultShellCallback;*/
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mybatis.generator.internal.DefaultShellCallback;
+import org.springframework.beans.factory.annotation.Autowired;*/
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.File;

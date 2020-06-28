@@ -1,7 +1,15 @@
 <template>
   <div class="app-container">
     <div class="filter-container">
-      <el-input v-model="listQuery.title" placeholder="标题" style="width: 200px;" class="filter-item"/>
+      标题：<el-input v-model="listQuery.title" placeholder="输入标题" style="width: 200px;" class="filter-item"/>
+      种类：<el-select v-model="listQuery.type" clearable placeholder="输入种类" style="width: 200px;" class="filter-item">
+        <el-option label="查询" value="查询" />
+        <el-option label="增加" value="增加" />
+        <el-option label="修改" value="修改" />
+        <el-option label="删除" value="删除" />
+        <el-option label="登录" value="登录" />
+        <el-option label="注销" value="注销" />
+      </el-select>
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="getList">
         查询
       </el-button>
@@ -28,6 +36,26 @@
       <el-table-column label="标题" min-width="150px">
         <template slot-scope="{row}">
           <span class="link-type">{{ row.title }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="路径" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.url }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="方法名" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.method }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="IP" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.ip }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="种类" min-width="150px">
+        <template slot-scope="{row}">
+          <span class="link-type">{{ row.type }}</span>
         </template>
       </el-table-column>
       <el-table-column label="创建时间" width="150px" align="center">

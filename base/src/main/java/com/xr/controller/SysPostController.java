@@ -4,6 +4,7 @@ import com.xr.entity.EducationPolitics;
 import com.xr.entity.SysMechanism;
 import com.xr.entity.SysPost;
 import com.xr.entity.SysStaff;
+import com.xr.log.MyLog;
 import com.xr.service.SysPostService;
 import com.xr.util.ResponseResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -30,6 +31,7 @@ public class SysPostController {
         return result;
     }
 
+    @MyLog(operation = "查询岗位", type = "查询")
     @RequestMapping("list")
     @RequiresPermissions("post:list")
     public ResponseResult list(SysPost sysPost, Integer page, Integer limit){
@@ -41,6 +43,7 @@ public class SysPostController {
         return result;
     }
 
+    @MyLog(operation = "增加岗位", type = "增加")
     @RequestMapping("add")
     @RequiresPermissions("post:add")
     public ResponseResult add(SysPost sysPost){
@@ -62,6 +65,7 @@ public class SysPostController {
         return result;
     }
 
+    @MyLog(operation = "修改岗位", type = "修改")
     @RequestMapping("update")
     @RequiresPermissions("post:update")
     public ResponseResult update(SysPost sysPost){
@@ -72,6 +76,7 @@ public class SysPostController {
         return result;
     }
 
+    @MyLog(operation = "删除岗位", type = "删除")
     @RequestMapping("delete")
     @RequiresPermissions("post:delete")
     public ResponseResult delete(Integer pid){

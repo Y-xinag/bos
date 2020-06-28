@@ -2,23 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f7c6f06-441c-4ba1-91d8-724aa08ca315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bos-view/src/views/sys/postPermission.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysPostPermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/log/MyLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/log/SysLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysPostPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysPostPermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/util/SysPermissionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bos-view/src/api/sys/postPermission.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/EducationPoliticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/EducationPoliticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysLogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysMechanismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysMechanismController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysPostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/controller/SysStaffController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysMechanismMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysStaffMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysMechanismService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysMechanismService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysStaffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysMechanismServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysMechanismServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysStaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/shiro/MyShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermissionExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/entity/SysPermissionExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysLogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/mapper/SysPostPermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/SysLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/EducationPoliticsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/EducationPoliticsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/java/com/xr/service/impl/SysLogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysPermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/main/resources/mybatis/mapper/SysPermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/base/src/test/java/com/xr/BaseApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bos-view/src/api/sys/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/sys/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/api/sys/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bos-view/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/mechanism.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/mechanism.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/user.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/Log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/Log.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bos-view/src/views/sys/postPermission.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bos-view/src/views/sys/postPermission.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +44,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -219,8 +232,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CommonUtil" />
         <item itemvalue="JUnit.BaseApplicationTests.test" />
+        <item itemvalue="Application.CommonUtil" />
         <item itemvalue="JUnit.BaseApplicationTests.contextLoads" />
         <item itemvalue="JUnit.BaseApplicationTests.aa" />
       </list>
@@ -260,7 +273,9 @@
       <workItem from="1592444587030" duration="29355000" />
       <workItem from="1592787986575" duration="7265000" />
       <workItem from="1592796087806" duration="8155000" />
-      <workItem from="1592812445287" duration="33389000" />
+      <workItem from="1592812445287" duration="54820000" />
+      <workItem from="1592960769742" duration="9957000" />
+      <workItem from="1593310743347" duration="2005000" />
     </task>
     <task id="LOCAL-00001" summary="第三，四节课">
       <created>1591846767603</created>
@@ -290,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592849603612</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="廉洁教育+系统管理（权限管理除外）再次优化">
+      <created>1592879318739</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592879318739</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +324,8 @@
     <MESSAGE value="第二次" />
     <MESSAGE value="大体框架" />
     <MESSAGE value="廉洁教育+系统管理（权限管理除外）" />
-    <option name="LAST_COMMIT_MESSAGE" value="廉洁教育+系统管理（权限管理除外）" />
+    <MESSAGE value="廉洁教育+系统管理（权限管理除外）再次优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="廉洁教育+系统管理（权限管理除外）再次优化" />
   </component>
   <component name="WindowStateProjectService">
     <state x="504" y="51" key="#BaseApplication" timestamp="1591770974882">
@@ -321,10 +344,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="987" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592188976230" />
-    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser" timestamp="1592877549280">
+    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser" timestamp="1592914480216">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1592877549280" />
+    <state x="1032" y="190" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1592914480216" />
     <state x="744" y="289" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591763413668">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -333,46 +356,46 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="939" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592205268232" />
-    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1592849597250">
+    <state x="774" y="30" key="CommitChangelistDialog2" timestamp="1592879313713">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1592849597250" />
+    <state x="774" y="30" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1592879313713" />
     <state x="1016" y="226" key="FileChooserDialogImpl" timestamp="1592812344236">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1016" y="226" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1592812344236" />
-    <state width="1867" height="308" key="GridCell.Tab.0.bottom" timestamp="1592878781568">
+    <state width="1867" height="293" key="GridCell.Tab.0.bottom" timestamp="1593001570479">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
-    <state width="1867" height="308" key="GridCell.Tab.0.center" timestamp="1592878781567">
+    <state width="1867" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570479" />
+    <state width="1867" height="293" key="GridCell.Tab.0.center" timestamp="1593001570479">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781567" />
-    <state width="1867" height="308" key="GridCell.Tab.0.left" timestamp="1592878781567">
+    <state width="1867" height="293" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570479" />
+    <state width="1867" height="293" key="GridCell.Tab.0.left" timestamp="1593001570466">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781567" />
-    <state width="1867" height="308" key="GridCell.Tab.0.right" timestamp="1592878781567">
+    <state width="1867" height="293" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570466" />
+    <state width="1867" height="293" key="GridCell.Tab.0.right" timestamp="1593001570479">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781567" />
-    <state width="1867" height="308" key="GridCell.Tab.1.bottom" timestamp="1592878781568">
+    <state width="1867" height="293" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570479" />
+    <state width="1867" height="293" key="GridCell.Tab.1.bottom" timestamp="1593001570480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
-    <state width="1867" height="308" key="GridCell.Tab.1.center" timestamp="1592878781568">
+    <state width="1867" height="293" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570480" />
+    <state width="1867" height="293" key="GridCell.Tab.1.center" timestamp="1593001570480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
-    <state width="1867" height="308" key="GridCell.Tab.1.left" timestamp="1592878781568">
+    <state width="1867" height="293" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570480" />
+    <state width="1867" height="293" key="GridCell.Tab.1.left" timestamp="1593001570480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
-    <state width="1867" height="308" key="GridCell.Tab.1.right" timestamp="1592878781568">
+    <state width="1867" height="293" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570480" />
+    <state width="1867" height="293" key="GridCell.Tab.1.right" timestamp="1593001570480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="308" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592878781568" />
+    <state width="1867" height="293" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1593001570480" />
     <state width="1281" height="369" key="GridCell.Tab.2.bottom" timestamp="1592797203870">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -401,21 +424,21 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="666" y="106" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592842999102" />
-    <state x="744" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592849617738">
+    <state x="744" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592879836742">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="744" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592849617738" />
+    <state x="744" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592879836742" />
     <state x="995" y="416" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592718477885">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="995" y="416" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592718477885" />
+    <state x="926" y="15" width="840" height="1034" key="search.everywhere.popup" timestamp="1592896901702">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="926" y="15" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1592896901702" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
 </project>

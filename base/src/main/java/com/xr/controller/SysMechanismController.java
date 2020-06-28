@@ -1,6 +1,7 @@
 package com.xr.controller;
 
 import com.xr.entity.SysMechanism;
+import com.xr.log.MyLog;
 import com.xr.service.SysMechanismService;
 import com.xr.util.ResponseResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -28,6 +29,7 @@ public class SysMechanismController {
         return result;
     }
 
+    @MyLog(operation = "查询岗位", type = "查询")
     @RequestMapping("list")
     @RequiresPermissions("mechanism:list")
     public ResponseResult list(SysMechanism sysMechanism, Integer page,Integer limit){
@@ -40,6 +42,7 @@ public class SysMechanismController {
         return result;
     }
 
+    @MyLog(operation = "增加岗位", type = "增加")
     @RequestMapping("add")
     @RequiresPermissions("mechanism:add")
     public ResponseResult add(SysMechanism sysMechanism){
@@ -61,6 +64,7 @@ public class SysMechanismController {
         return result;
     }
 
+    @MyLog(operation = "删除岗位", type = "删除")
     @RequestMapping("delete")
     @RequiresPermissions("mechanism:delete")
     public ResponseResult delete(Integer mid){
@@ -71,6 +75,7 @@ public class SysMechanismController {
         return result;
     }
 
+    @MyLog(operation = "修改岗位", type = "修改")
     @RequestMapping("update")
     @RequiresPermissions("mechanism:update")
     public ResponseResult update(SysMechanism sysMechanism){

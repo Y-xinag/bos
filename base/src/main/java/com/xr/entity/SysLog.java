@@ -9,23 +9,23 @@ import java.util.Date;
 public class SysLog implements Serializable {
     private Integer id;
 
-    private String title;
+    private String title;// 标题
 
-    private Integer sid;
+    private Integer sid;// 操作用户id
 
-    private String url;
+    private String url;// 路径
 
     private String method;
 
-    private String ip;
+    private String ip;// ip地址
 
     private String data;
 
-    private String terminal;
+    private String terminal;//
 
-    private String type;
+    private String type;// 操作类型
 
-    private Date time;
+    private Date time;// 操作时间
 
     private static final long serialVersionUID = 1L;
 

@@ -7,6 +7,7 @@
     <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
     <result column="permission_code" jdbcType="VARCHAR" property="permissionCode" />
     <result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
+    <result column="parent" jdbcType="INTEGER" property="parent" />
     <result column="required_permission" jdbcType="INTEGER" property="requiredPermission" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, menu_code, menu_name, permission_code, permission_name, required_permission
+    id, menu_code, menu_name, permission_code, permission_name, parent, required_permission
   </sql>
   <select id="selectByExample" parameterType="com.xr.entity.SysPermissionExample" resultMap="BaseResultMap">
     select
@@ -102,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.xr.entity.SysPermission">
     insert into sys_permission (id, menu_code, menu_name, 
-      permission_code, permission_name, required_permission
-      )
+      permission_code, permission_name, parent, 
+      required_permission)
     values (#{id,jdbcType=INTEGER}, #{menuCode,jdbcType=VARCHAR}, #{menuName,jdbcType=VARCHAR}, 
-      #{permissionCode,jdbcType=VARCHAR}, #{permissionName,jdbcType=VARCHAR}, #{requiredPermission,jdbcType=INTEGER}
-      )
+      #{permissionCode,jdbcType=VARCHAR}, #{permissionName,jdbcType=VARCHAR}, #{parent,jdbcType=INTEGER}, 
+      #{requiredPermission,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.xr.entity.SysPermission">
     insert into sys_permission
@@ -125,6 +126,9 @@
       </if>
       <if test="permissionName != null">
         permission_name,
+      </if>
+      <if test="parent != null">
+        parent,
       </if>
       <if test="requiredPermission != null">
         required_permission,
@@ -145,6 +149,9 @@
       </if>
       <if test="permissionName != null">
         #{permissionName,jdbcType=VARCHAR},
+      </if>
+      <if test="parent != null">
+        #{parent,jdbcType=INTEGER},
       </if>
       <if test="requiredPermission != null">
         #{requiredPermission,jdbcType=INTEGER},
@@ -175,6 +182,9 @@
       <if test="record.permissionName != null">
         permission_name = #{record.permissionName,jdbcType=VARCHAR},
       </if>
+      <if test="record.parent != null">
+        parent = #{record.parent,jdbcType=INTEGER},
+      </if>
       <if test="record.requiredPermission != null">
         required_permission = #{record.requiredPermission,jdbcType=INTEGER},
       </if>
@@ -190,6 +200,7 @@
       menu_name = #{record.menuName,jdbcType=VARCHAR},
       permission_code = #{record.permissionCode,jdbcType=VARCHAR},
       permission_name = #{record.permissionName,jdbcType=VARCHAR},
+      parent = #{record.parent,jdbcType=INTEGER},
       required_permission = #{record.requiredPermission,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -210,6 +221,9 @@
       <if test="permissionName != null">
         permission_name = #{permissionName,jdbcType=VARCHAR},
       </if>
+      <if test="parent != null">
+        parent = #{parent,jdbcType=INTEGER},
+      </if>
       <if test="requiredPermission != null">
         required_permission = #{requiredPermission,jdbcType=INTEGER},
       </if>
@@ -222,6 +236,7 @@
       menu_name = #{menuName,jdbcType=VARCHAR},
       permission_code = #{permissionCode,jdbcType=VARCHAR},
       permission_name = #{permissionName,jdbcType=VARCHAR},
+      parent = #{parent,jdbcType=INTEGER},
       required_permission = #{requiredPermission,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

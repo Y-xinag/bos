@@ -61,7 +61,8 @@ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
 		<table schema="" tableName="sys_menu" domainObjectName="SysMenu" />
 		<table schema="" tableName="sys_dept" domainObjectName="SysDept" />-->
 
-		<table tableName="%" />
+		<!--<table tableName="%" />-->
+		<table schema="" tableName="sys_permission" domainObjectName="SysPermission" />
 
 		<!--  <table schema="scott" tableName="product" domainObjectName="Product" />-->
 		<!-- 指定数据库表 去除Example例子
